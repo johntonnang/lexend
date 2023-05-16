@@ -19,7 +19,7 @@ const NewProducts: FunctionComponent = () => {
         </div>
       </div>
       <div className="flex flex-row items-start justify-start gap-[20px] text-left text-17xl text-black-100">
-        <div className="relative w-[635.25px] h-[542px]">
+        {/* <div className="relative w-[635.25px] h-[542px]">
           <img
             className="absolute h-[76.94%] w-full top-[0%] right-[0%] bottom-[23.06%] left-[0%] max-w-full overflow-hidden max-h-full object-cover"
             alt=""
@@ -66,16 +66,24 @@ const NewProducts: FunctionComponent = () => {
               2 300 SEK
             </div>
           </div>
-        </div>
+        </div> */}
         <ProductPreview
-          chairId="/rectangle-82@2x.png"
-          chairName="Oaki doaki chair"
-          chairDimensions="/colors.svg"
+          productId="/rectangle-81@2x.png"
+          productName="Flowerpot Lamp"
+          productColor="/colors2.svg"
+          productPrice={3200}
         />
         <ProductPreview
-          chairId="/rectangle-821@2x.png"
-          chairName="Moderna armchair"
-          chairDimensions="/colors1.svg"
+          productId="/rectangle-82@2x.png"
+          productName="Oaki doaki chair"
+          productColor="/colors1.svg"
+          productPrice={12000}
+        />
+        <ProductPreview
+          productId="/rectangle-821@2x.png"
+          productName="Moderna armchair"
+          productColor="/colors.svg"
+          productPrice={3000}
         />
       </div>
     </div>

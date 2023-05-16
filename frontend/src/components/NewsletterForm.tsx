@@ -22,11 +22,11 @@ const NewsletterForm: FunctionComponent = () => {
           </div>
           <div className="relative w-full h-[72px]">
             <input
-              className="border-2 border-grey border-solid rounded-31xl font-clash-grotesk text-xl absolute h-full w-[50%] top-[0%] right-[45.26%] bottom-[1.39%] left-[0%] flex flex-col items-start justify-center focus:outline-none pl-8"
+              className="border-2 border-grey border-solid rounded-31xl font-clash-grotesk text-xl absolute h-full right-[45.26%] left-[0%] flex flex-col items-start justify-center focus:outline-none pl-8"
               type="text"
               placeholder="Email adress"
             />
-            <button className="cursor-pointer py-4 px-16 bg-black-100 absolute h-full w-[30.76%] top-[0%] right-[10.16%] bottom-[0%] left-[59.08%] rounded-31xl box-border flex flex-row items-center justify-center border-4 border-solid border-black-100">
+            <button className="cursor-pointer py-4 px-16 bg-black-100 absolute h-full right-[10.16%] left-[59.08%] rounded-31xl box-border flex flex-row items-center justify-center border-4 border-solid border-black-100">
               <div className="relative text-5xl tracking-[0.15em] font-medium font-clash-grotesk text-beige text-left">
                 Subscribe
               </div>
