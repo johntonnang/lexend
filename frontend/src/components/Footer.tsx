@@ -60,24 +60,24 @@ const Footer: FunctionComponent = () => {
                   Becomes a sales partner
                 </div>
               </div>
+              {/* <div className="bg-black-100 flex flex-row items-end justify-end">
+              <img
+                className="relative w-6 h-6 overflow-hidden shrink-0"
+                alt=""
+                src="/mdifacebook.svg"
+              />
+              <img
+                className="relative w-6 h-6 overflow-hidden shrink-0"
+                alt=""
+                src="/mdiinstagram.svg"
+              />
+              <img
+                className="relative w-6 h-6 overflow-hidden shrink-0"
+                alt=""
+                src="/mditwitter.svg"
+              />
+            </div> */}
             </div>
-          </div>
-          <div className="flex flex-row items-end justify-end gap-[15px]">
-            <img
-              className="relative w-6 h-6 overflow-hidden shrink-0"
-              alt=""
-              src="/mdifacebook.svg"
-            />
-            <img
-              className="relative w-6 h-6 overflow-hidden shrink-0"
-              alt=""
-              src="/mdiinstagram.svg"
-            />
-            <img
-              className="relative w-6 h-6 overflow-hidden shrink-0"
-              alt=""
-              src="/mditwitter.svg"
-            />
           </div>
         </div>
       </div>

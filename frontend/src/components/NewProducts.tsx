@@ -3,7 +3,7 @@ import ProductPreview from "./ProductPreview"
 
 const NewProducts: FunctionComponent = () => {
   return (
-    <div className="bg-beige h-[948px] flex flex-col items-center justify-start gap-[96px] text-center text-37xl text-black-200 font-body-b1">
+    <div className="w-full pt-[176px] bg-beige h-[948px] flex flex-col items-center justify-start gap-[96px] text-center text-37xl text-black-200 font-body-b1">
       <div className="flex flex-col items-center justify-start">
         <div className="flex flex-col items-center justify-start gap-[44px]">
           <div className="relative tracking-[-0.06em] inline-block w-[470px]">
@@ -25,10 +25,10 @@ const NewProducts: FunctionComponent = () => {
             alt=""
             src="/rectangle-81@2x.png"
           />
-          <div className="absolute h-[18.82%] w-[99.8%] top-[81.55%] right-[0.2%] bottom-[-0.37%] left-[0%] flex flex-col items-start justify-start gap-[17px]">
+          <div className="absolute h-[18.82%] w-full top-[81.55%] right-[0.2%] bottom-[-0.37%] left-[0%] flex flex-col items-start justify-start gap-[17px]">
             <div className="w-[634px] flex flex-row items-center justify-between">
               <div className="w-[469px] flex flex-row items-start justify-start">
-                <div className="relative tracking-[-0.07em] inline-block w-[469px] shrink-0">
+                <div className="relative tracking-[-0.07em] inline-block w-full shrink-0">
                   Flowerpot lamp
                 </div>
               </div>

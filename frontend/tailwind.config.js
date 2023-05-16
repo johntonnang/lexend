@@ -11,6 +11,7 @@ module.exports = {
           200: "#000",
         },
         beige: "#f2ebe3",
+        grey: "#DBDBDB",
       },
       fontFamily: {
         "body-b1": "Lexend",

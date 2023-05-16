@@ -14,7 +14,7 @@ const ProductPreview: FunctionComponent<ProductPreviewType> = ({
   return (
     <div className="w-[417px] h-[534px] flex flex-col items-start justify-start gap-[24px] text-left text-17xl text-black-100 font-body-b1">
       <img
-        className="relative w-[417px] h-[417px] object-cover"
+        className="relative w-full h-[417px] object-cover"
         alt=""
         src={chairId}
       />

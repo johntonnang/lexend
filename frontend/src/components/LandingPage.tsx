@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react"
+import { NavLink } from "react-router-dom"
 
 const LandingPage: FunctionComponent = () => {
   return (
@@ -98,25 +99,28 @@ const LandingPage: FunctionComponent = () => {
           </div> */}
         </div>
       </div>
-      <div className="my-48">
-        <div className="flex flex-row items-start justify-start gap-[93px] text-center">
-          <a className="[text-decoration:none] relative w-[308px] h-[308px] text-[inherit]">
+      <div className="my-[176px]">
+        <div className="flex flex-row items-start justify-start gap-[64px] text-center">
+          <NavLink
+            to="/"
+            className="[text-decoration:none] relative w-[308px] h-[308px] text-[inherit]"
+          >
             <img
               className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] max-w-full overflow-hidden max-h-full object-cover"
               alt=""
               src="/rectangle-72@2x.png"
             />
-            <div className="absolute top-[61.69%] left-[20.78%] tracking-[-0.05em]">
+            <div className="absolute top-[110%] left-[20.78%] tracking-[-0.05em]">
               Chairs
             </div>
-          </a>
+          </NavLink>
           <a className="[text-decoration:none] relative w-[308px] h-[308px] text-[inherit]">
             <img
               className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] max-w-full overflow-hidden max-h-full object-cover"
               alt=""
               src="/rectangle-721@2x.png"
             />
-            <div className="absolute top-[61.69%] left-[18.51%] tracking-[-0.05em]">
+            <div className="absolute top-[110%] left-[18.51%] tracking-[-0.05em]">
               Lamps
             </div>
           </a>
@@ -126,7 +130,7 @@ const LandingPage: FunctionComponent = () => {
               alt=""
               src="/rectangle-722@2x.png"
             />
-            <div className="absolute top-[61.69%] left-[24.03%] tracking-[-0.05em]">
+            <div className="absolute top-[110%] left-[24.03%] tracking-[-0.05em]">
               Sofas
             </div>
           </a>
@@ -136,7 +140,7 @@ const LandingPage: FunctionComponent = () => {
               alt=""
               src="/rectangle-723@2x.png"
             />
-            <div className="absolute top-[61.69%] left-[21.1%] tracking-[-0.05em]">
+            <div className="absolute top-[110%] left-[21.1%] tracking-[-0.05em]">
               Tables
             </div>
           </a>
