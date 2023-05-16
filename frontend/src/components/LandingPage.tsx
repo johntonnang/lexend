@@ -2,7 +2,7 @@ import { FunctionComponent } from "react"
 
 const LandingPage: FunctionComponent = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-start gap-[176px] text-left text-45xl text-black-200 font-body-b1">
+    <div className="bg-beige w-full flex flex-col items-center justify-start gap-[176px] text-left text-45xl text-black-200 font-body-b1">
       <div className="h-full flex flex-col items-start justify-start">
         <div className="w-full h-full flex flex-col items-center justify-start">
           <div className="relative w-full h-screen">
@@ -11,7 +11,7 @@ const LandingPage: FunctionComponent = () => {
               alt=""
               src="/cathanuri-yr9qtgsunsplash@2x.png"
             />
-            <div className="absolute top-[349.66px] left-[108px] w-[843.65px] flex flex-col items-start justify-center gap-[68px]">
+            <div className="absolute top-[300.66px] left-[108px] w-[843.65px] flex flex-col items-start justify-center gap-[68px]">
               <div className="relative w-[844px] h-[265px]">
                 <div className="absolute top-[-0.17px] left-[0.47px] tracking-[-0.05em] inline-block w-[858px]">
                   The new look that lasts forever
@@ -98,7 +98,7 @@ const LandingPage: FunctionComponent = () => {
           </div> */}
         </div>
       </div>
-      <div className=" my-48">
+      <div className="my-48">
         <div className="flex flex-row items-start justify-start gap-[93px] text-center">
           <a className="[text-decoration:none] relative w-[308px] h-[308px] text-[inherit]">
             <img

@@ -3,7 +3,7 @@ import ProductPreview from "./ProductPreview"
 
 const NewProducts: FunctionComponent = () => {
   return (
-    <div className="h-[948px] flex flex-col items-center justify-start gap-[96px] text-center text-37xl text-black-200 font-body-b1">
+    <div className="bg-beige h-[948px] flex flex-col items-center justify-start gap-[96px] text-center text-37xl text-black-200 font-body-b1">
       <div className="flex flex-col items-center justify-start">
         <div className="flex flex-col items-center justify-start gap-[44px]">
           <div className="relative tracking-[-0.06em] inline-block w-[470px]">

@@ -3,7 +3,7 @@ import BlogPost from "./BlogPost"
 
 const StoreContainer: FunctionComponent = () => {
   return (
-    <div className="flex flex-row items-start justify-center text-left text-5xl text-black-200 font-body-b1 my-[176px]">
+    <div className="bg-beige flex flex-row items-start justify-center text-left text-5xl text-black-200 font-body-b1 py-[176px]">
       <div className="flex flex-row items-end justify-start gap-[20px]">
         <BlogPost
           rectangle72="/rectangle-724@2x.png"
