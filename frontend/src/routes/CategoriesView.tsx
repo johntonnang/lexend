@@ -24,7 +24,7 @@ our exclusive chair collection and discover the perfect seating
 companion for your luxurious lifestyle.
 `;
 
-const collapsedText = `${expandedText.substring(0, 200)}...`;
+const collapsedText = `${expandedText.substring(0, 266)}`;
 
 
   return (
@@ -39,7 +39,7 @@ const collapsedText = `${expandedText.substring(0, 200)}...`;
           <div className="w-[1590px] h-[169px] flex flex-row items-start justify-between text-5xl text-black">
       <div className="relative w-[1046px] h-[255px]">
         <div
-          className="absolute w-full top-[0%] left-[0%] leading-[120%] font-light inline-block"
+          className="font-light inline-block"
           style={{
             background: !isExpanded
               ? 'linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e'
@@ -51,10 +51,10 @@ const collapsedText = `${expandedText.substring(0, 200)}...`;
           {isExpanded ? expandedText : collapsedText}
         </div>
         <div
-          className="relative top-[70%] left-[41.77%] text-decoration:underline leading-[120%] font-light cursor-pointer"
+          className="relative left-[41.77%] leading-[120%] font-light cursor-pointer text-decoration: underline"
           onClick={handleClick}
         >
-          {isExpanded ? 'Read less' : 'Read more'}
+          {isExpanded ? 'Read less' : '...Read more'}
         </div>
       </div>
       <div className="relative leading-[120%] font-light text-black">
