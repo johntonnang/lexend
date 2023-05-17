@@ -11,9 +11,9 @@ const CategoriesView: FunctionComponent = () => {
 
   const handleClick = () => {
     setIsExpanded(!isExpanded);
-};
+  };
 
-const expandedText = `
+  const expandedText = `
 Our collection of seating options is designed to elevate both
 comfort and style. Crafted with meticulous attention to detail,
 our luxurious chairs are the epitome of elegance and
@@ -24,7 +24,7 @@ our exclusive chair collection and discover the perfect seating
 companion for your luxurious lifestyle.
 `;
 
-const collapsedText = `${expandedText.substring(0, 266)}`;
+  const collapsedText = `${expandedText.substring(0, 266)}`;
 
 
   return (
@@ -37,30 +37,30 @@ const collapsedText = `${expandedText.substring(0, 266)}`;
             </div>
           </div>
           <div className="w-[1590px] h-[169px] flex flex-row items-start justify-between text-5xl text-black">
-      <div className="relative w-[1046px] h-[255px]">
-        <div
-          className="font-light inline-block"
-          style={{
-            background: !isExpanded
-              ? 'linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e'
-              : 'linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: !  isExpanded ? 'transparent' : ''
-          }}
-        >
-          {isExpanded ? expandedText : collapsedText}
-        </div>
-        <div
-          className="relative left-[41.77%] leading-[120%] font-light cursor-pointer text-decoration: underline"
-          onClick={handleClick}
-        >
-          {isExpanded ? 'Read less' : '...Read more'}
-        </div>
-      </div>
-      <div className="relative leading-[120%] font-light text-black">
-        6 products
-      </div>
-    </div>
+            <div className="relative w-[1046px] h-[255px]">
+              <div
+                className="font-light inline-block"
+                style={{
+                  background: !isExpanded
+                    ? 'linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e'
+                    : 'linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: !isExpanded ? 'transparent' : ''
+                }}
+              >
+                {isExpanded ? expandedText : collapsedText}
+              </div>
+              <div
+                className="relative left-[41.77%] leading-[120%] font-light cursor-pointer text-decoration: underline"
+                onClick={handleClick}
+              >
+                {isExpanded ? 'Read less' : '...Read more'}
+              </div>
+            </div>
+            <div className="relative leading-[120%] font-light text-black">
+              6 products
+            </div>
+          </div>
         </div>
         <div className="flex flex-col items-start justify-start gap-[84px]">
           <FurnitureSection
