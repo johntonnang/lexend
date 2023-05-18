@@ -29,23 +29,23 @@ const collapsedText = `${expandedText.substring(0, 266)}`;
 
   return (
     <div className="relative bg-beige w-full overflow-hidden flex flex-col items-center justify-start gap-[176px] text-left text-[96px] text-black font-body-b1">
-      <div className="w-[1728px] flex flex-col items-center justify-start gap-[176px] z-[0]">
+      <div className="w-[100%] flex flex-col items-center justify-start gap-[176px] z-[0]">
         <div className="flex flex-col items-center justify-start gap-[96px]">
-          <div className="w-[2064px] h-[722px] overflow-hidden shrink-0 flex flex-col py-[200px] px-0 box-border items-center justify-end relative bg-[url(/public/frame-87@3x.png)] bg-cover bg-no-repeat bg-[top]">
-            <div className="absolute my-0 mx-[!important] top-[570px] left-[245px] tracking-[-0.05em] z-[0]">
+          <div className="w-[100%] h-[10%] lg:h-[50rem] overflow-hidden shrink-0 flex flex-col py-[200px] px-0 box-border items-center justify-end relative bg-[url(/public/frame-87@3x.png)] bg-cover bg-no-repeat bg-[top]">
+            <div className="absolute my-0 mx-[!important] top-[40rem] left-[6rem] tracking-[-0.05em] z-[0]">
               Chairs
             </div>
           </div>
-          <div className="w-[1590px] h-[169px] flex flex-row items-start justify-between text-5xl text-black">
-      <div className="relative w-[1046px] h-[255px]">
+          <div className="w-[100%] h-[169px] lg:flex lg:flex-row lg:items-start lg:justify-between text-5xl text-black">
+      <div className="relative h-[255px]  pl-[16px] pr-[16px] lg:pl-[69px]">
         <div
-          className="font-light inline-block"
+          className="font-light inline-block w-[100%] lg:w-[60%]"
           style={{
             background: !isExpanded
               ? 'linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e'
               : 'linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e',
             WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: !  isExpanded ? 'transparent' : ''
+            WebkitTextFillColor: !  isExpanded ? 'transparent' : '',
           }}
         >
           {isExpanded ? expandedText : collapsedText}
@@ -57,7 +57,7 @@ const collapsedText = `${expandedText.substring(0, 266)}`;
           {isExpanded ? 'Read less' : '...Read more'}
         </div>
       </div>
-      <div className="relative leading-[120%] font-light text-black">
+      <div className="absolute right-[0] leading-[120%] font-light text-black pr-[69px] w-[122px]">
         6 products
       </div>
     </div>
