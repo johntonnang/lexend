@@ -11,9 +11,9 @@ const CategoriesView: FunctionComponent = () => {
 
   const handleClick = () => {
     setIsExpanded(!isExpanded);
-};
+  };
 
-const expandedText = `
+  const expandedText = `
 Our collection of seating options is designed to elevate both
 comfort and style. Crafted with meticulous attention to detail,
 our luxurious chairs are the epitome of elegance and
@@ -24,7 +24,7 @@ our exclusive chair collection and discover the perfect seating
 companion for your luxurious lifestyle.
 `;
 
-const collapsedText = `${expandedText.substring(0, 266)}`;
+  const collapsedText = `${expandedText.substring(0, 266)}`;
 
 
   return (
