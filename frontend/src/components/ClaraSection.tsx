@@ -15,7 +15,7 @@ const ClaraSection: FunctionComponent = () => {
               <div className="relative tracking-[-0.06em] inline-block">
                 Meet Clara
               </div>
-              <div className="w-[622px] relative text-5xl leading-[40px] font-inter inline-block">
+              <div className="w-[622px] relative text-5xl leading-[120%] font-body-b1 inline-block font-light">
                 Lexend started with Clara’s vision of creating a place for
                 designer interior. Her passion is in the core of all we do. The
                 process of selecting the pieces for our family is meticulous and

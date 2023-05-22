@@ -3,7 +3,7 @@ import ProductPreview from "./ProductPreview"
 
 const NewProducts: FunctionComponent = () => {
   return (
-    <div className="w-full pt-[176px] bg-beige h-[948px] flex flex-col items-center justify-start gap-[96px] text-center text-37xl text-black-200 font-body-b1">
+    <div className="w-full bg-beige h-[948px] flex flex-col items-center justify-start gap-[96px] text-center text-37xl text-black-200 font-body-b1">
       <div className="flex flex-col items-center justify-start">
         <div className="flex flex-col items-center justify-start gap-[44px]">
           <div className="relative tracking-[-0.06em] inline-block w-[470px]">
@@ -19,7 +19,6 @@ const NewProducts: FunctionComponent = () => {
         </div>
       </div>
       <div className="flex flex-row items-start justify-start gap-[20px] text-left text-17xl text-black-100">
-
         <ProductPreview
           productId="/rectangle-81@2x.png"
           productName="Flowerpot Lamp"
