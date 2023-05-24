@@ -3,7 +3,7 @@ import FurnitureSection from "../components/FurnitureSection";
 import LexendContainer from "../components/LexendContainer";
 import ChairContainer from "../components/ChairContainer";
 import NewsletterForm from "../components/NewsletterForm";
-import CustomerCareContainer from "../components/CustomerCareContainer";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 const CategoriesView: FunctionComponent = () => {
@@ -102,7 +102,7 @@ companion for your luxurious lifestyle.
       <ChairContainer />
       <div className="flex flex-col items-start justify-start z-[3]">
         <NewsletterForm />
-        <CustomerCareContainer />
+        <Footer />
       </div>
       <Navbar />
       <div>

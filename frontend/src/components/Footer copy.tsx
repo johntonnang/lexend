@@ -2,31 +2,23 @@ import { FunctionComponent } from "react"
 
 const Footer: FunctionComponent = () => {
   return (
-    <div className="relative h-[460.47px] lg:h-[317px] w-full text-center font-body-b1 text-base text-white">
-
+    <div className="relative h-[317px] w-full text-left font-body-b1 text-base text-white">
+      <div className="absolute bottom-[0%] left-[0%] right-[0%] top-[0%] h-full w-full">
         <div className="absolute bottom-[0%] left-[0%] right-[0%] top-[0%] h-full w-full bg-brown" />
-
-          <div className=" flex flex-col items-center justify-center py-[52px]">
+      </div>
+      <div className="absolute bottom-[19.24%] left-[4.28%] right-[5.03%] top-[19.24%] flex h-[61.51%] w-[90.68%] flex-row items-end justify-between">
+        <div className="flex flex-row items-end justify-start gap-[227px]">
+          <div className="flex flex-row items-center justify-start gap-[227px]">
             <img
               className="relative h-[88.47px] w-[165px]"
               alt=""
               src="/lexend101.svg"
             />
-            <div>
-            <div className="py-[52px]">
-
-                <div className="pb-[10px]">
-                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left ">
+            <div className="flex flex-row items-start justify-start">
+              <div className="flex flex-col items-start justify-start">
+                <b className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   Customer care
-
                 </b>
-                <img
-                  className="relative h-6 w-6 shrink-0 overflow-hidden"
-                  alt=""
-                  src="/Plus.svg"
-                />
-</div>
-                <div className="hidden">
                 <div className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   Service and support
                 </div>
@@ -39,20 +31,11 @@ const Footer: FunctionComponent = () => {
                 <div className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   Find store
                 </div>
-
               </div>
-              <div className="pb-[10px]">
-                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left ">
-
+              <div className="flex flex-col items-start justify-start">
+                <b className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   Our policies
                 </b>
-                <img
-                  className="relative h-6 w-6 shrink-0 overflow-hidden"
-                  alt=""
-                  src="/Plus.svg"
-                />
-</div>
-                <div className="hidden">
                 <div className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   Return
                 </div>
@@ -63,17 +46,10 @@ const Footer: FunctionComponent = () => {
                   Cookie policies
                 </div>
               </div>
-              <div>
-                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left">
+              <div className="flex flex-col items-start justify-start">
+                <b className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   Our company
                 </b>
-                <img
-                  className="relative h-6 w-6 shrink-0 overflow-hidden"
-                  alt=""
-                  src="/Plus.svg"
-                />
-                </div>
-                <div className="hidden">
                 <div className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   About us
                 </div>
@@ -83,9 +59,8 @@ const Footer: FunctionComponent = () => {
                 <div className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   Becomes a sales partner
                 </div>
-                </div>
               </div>
-              <div className="flex flex-row items-center justify-center gap-[19px]">
+              <div className="flex flex-row items-end justify-end">
                 <img
                   className="relative h-6 w-6 shrink-0 overflow-hidden"
                   alt=""
@@ -103,7 +78,8 @@ const Footer: FunctionComponent = () => {
                 />
               </div>
             </div>
-
+          </div>
+        </div>
       </div>
     </div>
   )
