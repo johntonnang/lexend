@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react"
 
 function Navbar(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  // const { openCart, cartQuantity } = useShoppingCart()
+  const { openCart, cartQuantity } = useShoppingCart()
   // const menuRef = useRef<HTMLDivElement>(null)
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true)
   const [isHovered, setIsHovered] = useState(false)
@@ -268,7 +268,18 @@ function Navbar(): JSX.Element {
                   </defs>
                 </svg>
               </NavLink>
-              <NavLink to="/" className="relative z-40 h-[30px] w-[30px]">
+              <button
+                onClick={openCart}
+                // className={`${
+                //   isNavbarTransparent ? "color-white" : " color-black-100"
+                // } bg-transparent transition-colors duration-500`}
+                className="relative z-40 cursor-pointer bg-transparent"
+              >
+                {cartQuantity > 0 && (
+                  <div className="absolute h-6 w-6 -translate-y-2 translate-x-6 transform rounded-full bg-black-100 text-center text-white">
+                    {cartQuantity}
+                  </div>
+                )}
                 <svg
                   width="30"
                   height="31"
@@ -297,7 +308,7 @@ function Navbar(): JSX.Element {
                     </clipPath>
                   </defs>
                 </svg>
-              </NavLink>
+              </button>
               <NavLink to="/" className="relative z-40 h-[35px] w-[35px]">
                 <svg
                   width="35"
