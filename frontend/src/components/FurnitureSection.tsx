@@ -1,103 +1,47 @@
 import { FunctionComponent } from "react";
 
 type FurnitureSectionType = {
-  furnitureItemId?: string;
   furnitureName?: string;
   furniturePrice?: string;
-  furniturePriceSEK?: string;
-  furnitureImageUrl?: string;
-  armchairType?: string;
+  furnitureImage?: string;
   furnitureDimensions?: string;
-  furniturePriceSEK2?: string;
-  furnitureImageId?: string;
-  armchairName?: string;
-  furnitureDimensionId?: string;
-  furniturePriceSEK3?: string;
 };
 
 const FurnitureSection: FunctionComponent<FurnitureSectionType> = ({
-  furnitureItemId,
   furnitureName,
   furniturePrice,
-  furniturePriceSEK,
-  furnitureImageUrl,
-  armchairType,
   furnitureDimensions,
-  furniturePriceSEK2,
-  furnitureImageId,
-  armchairName,
-  furnitureDimensionId,
-  furniturePriceSEK3,
+  furnitureImage
 }) => {
   return (
-    <div className="flex flex-row items-start justify-start gap-[64px] text-left text-17xl text-black font-body-b1">
-      <div className="flex flex-col items-center justify-start gap-[24px]">
+
+      <div>
         <img
-          className="relative w-[487px] h-[508px] object-cover"
+          className="w-[170px] h-[177.33px] md:w-[324px] md:h-[338px] lg:w-[487px] lg:h-[508px]"
           alt=""
-          src={furnitureItemId}
+          src={furnitureImage}
         />
-        <div className="w-[487px] flex flex-col items-start justify-center gap-[24px]">
-          <div className="w-[487px] flex flex-row items-center justify-between">
-            <div className="relative tracking-[-0.07em] inline-block w-[400px] shrink-0">
+        <div>
+          <div>
+            <div className="relative tracking-[-0.07em] shrink-0 text-[16px]">
               {furnitureName}
             </div>
-            <img
-              className="relative w-[60px] h-[30px]"
-              alt=""
-              src={furniturePrice}
-            />
+
           </div>
-          <div className="relative text-5xl leading-[120%] font-light">
-            {furniturePriceSEK}
+          <div className="flex space-x-12">
+          <div className="relative leading-[120%] font-light text-[16px]">
+            {furniturePrice}
           </div>
-        </div>
-      </div>
-      <div className="flex flex-col items-center justify-start gap-[24px]">
-        <img
-          className="relative w-[487px] h-[508px] object-cover"
-          alt=""
-          src={furnitureImageUrl}
-        />
-        <div className="w-[487px] flex flex-col items-start justify-center gap-[24px]">
-          <div className="w-[487px] flex flex-row items-center justify-between">
-            <div className="relative tracking-[-0.07em] inline-block w-[400px] shrink-0">
-              {armchairType}
-            </div>
-            <img
-              className="relative w-[60px] h-[30px]"
+          <img
+              className="relative h-[13.5px]"
               alt=""
               src={furnitureDimensions}
             />
-          </div>
-          <div className="relative text-5xl leading-[120%] font-light">
-            {furniturePriceSEK2}
-          </div>
+</div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-start gap-[24px]">
-        <img
-          className="relative w-[487px] h-[508px] object-cover"
-          alt=""
-          src={furnitureImageId}
-        />
-        <div className="w-[487px] flex flex-col items-start justify-center gap-[24px]">
-          <div className="w-[487px] flex flex-row items-center justify-between">
-            <div className="relative tracking-[-0.07em] inline-block w-[400px] shrink-0">
-              {armchairName}
-            </div>
-            <img
-              className="relative w-[60px] h-[30px]"
-              alt=""
-              src={furnitureDimensionId}
-            />
-          </div>
-          <div className="relative text-5xl leading-[120%] font-light">
-            {furniturePriceSEK3}
-          </div>
-        </div>
-      </div>
-    </div>
+
+
   );
 };
 
