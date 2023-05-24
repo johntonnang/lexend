@@ -13,7 +13,7 @@ const NewsletterForm: FunctionComponent = () => {
           <div className="flex flex-col items-start justify-start">
             <div className="w-1/2flex flex-col items-center justify-center">
               <div className="w-[650px] flex flex-col items-center justify-start gap-[57px]">
-                <div className="relative tracking-[-0.07em]">
+                <div className="relative w-[657px] h-[60px] font-body-b1 font-lexend font-normal text-left" style={{ fontSize: "45px", lineHeight: "60px", letterSpacing: "-0.07em", color: "#000000" }}>
                   Become a member of our family
                 </div>
                 <div className="relative text-5xl leading-[120%] font-light text-center inline-block w-[613px]">{`Enjoy our newest pieces, exclusive events, limited offers and much more when joining our community. `}</div>
