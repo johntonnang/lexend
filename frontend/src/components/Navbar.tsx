@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import React, { useState, useEffect, useRef } from "react"
+import DetailPage from "../routes/DetailPage"
 
 function Navbar(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  // const { openCart, cartQuantity } = useShoppingCart()
+  const { openCart, cartQuantity } = useShoppingCart()
   // const menuRef = useRef<HTMLDivElement>(null)
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true)
   const [isHovered, setIsHovered] = useState(false)
@@ -26,21 +27,23 @@ function Navbar(): JSX.Element {
 
   return (
     <nav
-      className={`${
-        isNavbarTransparent
-          ? "bg-transparent text-white"
-          : "bg-beige text-black-100"
-      } fixed top-0 z-20 flex h-[148px] w-full transition-colors duration-500`}
+      className={`${isNavbarTransparent
+        ? "bg-transparent text-white"
+        : "bg-beige text-black-100"
+        } fixed top-0 z-20 flex h-[148px] w-full transition-colors duration-500`}
     >
+
+
+
+
       {/* Hamburger menu button */}
       <button
         className="block bg-transparent transition-colors duration-500 focus:outline-none lg:hidden"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         <svg
-          className={`h-8 w-8 ${
-            isNavbarTransparent ? "fill-white" : " fill-black-100"
-          } transition-colors duration-500`}
+          className={`h-8 w-8 ${isNavbarTransparent ? "fill-white" : " fill-black-100"
+            } transition-colors duration-500`}
           width="25"
           height="16"
           viewBox="0 0 25 16"
@@ -48,18 +51,16 @@ function Navbar(): JSX.Element {
           xmlns="http://www.w3.org/2000/svg"
         >
           <rect
-            className={`${
-              isMenuOpen ? "-rotate-45" : "block"
-            } origin-center transform duration-500`}
+            className={`${isMenuOpen ? "-rotate-45" : "block"
+              } origin-center transform duration-500`}
             y="7"
             width="25"
             height="2"
             rx="1"
           />
           <rect
-            className={`${
-              isMenuOpen ? "rotate-45" : "block"
-            } origin-center transform duration-500`}
+            className={`${isMenuOpen ? "rotate-45" : "block"
+              } origin-center transform duration-500`}
             x="12"
             y="14"
             width="13"
@@ -67,9 +68,8 @@ function Navbar(): JSX.Element {
             rx="1"
           />
           <rect
-            className={`${
-              isMenuOpen ? "rotate-45" : "block"
-            } origin-center transform duration-500`}
+            className={`${isMenuOpen ? "rotate-45" : "block"
+              } origin-center transform duration-500`}
             width="13"
             height="2"
             rx="1"
@@ -95,9 +95,8 @@ function Navbar(): JSX.Element {
                 viewBox="0 0 165 83"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className={`${
-                  isNavbarTransparent ? "stroke-beige" : "stroke-black-100"
-                } "relative duration-500" transition-colors `}
+                className={`${isNavbarTransparent ? "stroke-beige" : "stroke-black-100"
+                  } "relative duration-500" transition-colors `}
               >
                 <path
                   d="M36.8965 56.4584C34.9481 54.2331 32.3569 52.6261 29.4577 51.8452C26.5585 51.0642 23.4846 51.1452 20.6333 52.0777C17.782 53.0101 15.2844 54.7512 13.4633 57.0758C11.6421 59.4004 10.5812 62.2017 10.4176 65.1177C10.254 68.0337 10.9953 70.9302 12.5456 73.433C14.0959 75.9358 16.384 77.9298 19.1141 79.1572C21.8442 80.3846 24.8908 80.7891 27.8603 80.3183C30.8297 79.8475 33.5854 78.5231 35.7712 76.5163"
@@ -240,9 +239,8 @@ function Navbar(): JSX.Element {
                   viewBox="0 0 30 31"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    isNavbarTransparent ? "fill-beige" : " fill-black-100"
-                  } "relative duration-500" transition-colors `}
+                  className={`${isNavbarTransparent ? "fill-beige" : " fill-black-100"
+                    } "relative duration-500" transition-colors `}
                 >
                   <g clip-path="url(#clip0_101_525)">
                     <path
@@ -268,16 +266,26 @@ function Navbar(): JSX.Element {
                   </defs>
                 </svg>
               </NavLink>
-              <NavLink to="/" className="relative z-40 h-[30px] w-[30px]">
+              <button
+                onClick={openCart}
+                // className={`${
+                //   isNavbarTransparent ? "color-white" : " color-black-100"
+                // } bg-transparent transition-colors duration-500`}
+                className="relative z-40 cursor-pointer bg-transparent"
+              >
+                {cartQuantity > 0 && (
+                  <div className="absolute h-6 w-6 -translate-y-2 translate-x-6 transform rounded-full bg-black-100 text-center text-white">
+                    {cartQuantity}
+                  </div>
+                )}
                 <svg
                   width="30"
                   height="31"
                   viewBox="0 0 30 31"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    isNavbarTransparent ? "fill-beige" : " fill-black-100"
-                  } "relative duration-500" transition-colors `}
+                  className={`${isNavbarTransparent ? "fill-beige" : " fill-black-100"
+                    } "relative duration-500" transition-colors `}
                 >
                   <g clip-path="url(#clip0_101_528)">
                     <path
@@ -297,7 +305,7 @@ function Navbar(): JSX.Element {
                     </clipPath>
                   </defs>
                 </svg>
-              </NavLink>
+              </button>
               <NavLink to="/" className="relative z-40 h-[35px] w-[35px]">
                 <svg
                   width="35"
@@ -305,9 +313,8 @@ function Navbar(): JSX.Element {
                   viewBox="0 0 35 35"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    isNavbarTransparent ? "fill-beige" : " fill-black-100"
-                  } "relative duration-500" transition-colors `}
+                  className={`${isNavbarTransparent ? "fill-beige" : " fill-black-100"
+                    } "relative duration-500" transition-colors `}
                 >
                   <path
                     fill-rule="evenodd"

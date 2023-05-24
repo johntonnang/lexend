@@ -2,28 +2,28 @@ import { FunctionComponent } from "react"
 
 const ClaraSection: FunctionComponent = () => {
   return (
-    <div className="bg-white w-full flex flex-col items-start justify-start text-center text-37xl text-black-200 font-body-b1">
-      <div className="w-full flex flex-row items-center justify-start">
+    <div className="flex w-full flex-col items-start justify-start bg-white text-center font-body-b1 text-37xl text-black-200">
+      <div className="flex w-full flex-row items-center justify-start">
         <img
-          className="relative w-1/2 h-[719px] object-cover"
+          className="relative h-[719px] w-1/2 object-cover"
           alt=""
           src="/rectangle-78@2x.png"
         />
         <div className="mx-[89px] flex flex-col items-center justify-center">
           <div className="flex flex-col items-center justify-start gap-[32px]">
             <div className="flex flex-col items-center justify-start gap-[32px]">
-              <div className="relative tracking-[-0.06em] inline-block">
+              <div className="relative inline-block tracking-[-0.06em]">
                 Meet Clara
               </div>
-              <div className="w-[622px] relative text-5xl leading-[120%] font-body-b1 inline-block font-light">
+              <div className="relative inline-block w-full font-body-b1 text-5xl font-light leading-[120%]">
                 Lexend started with Clara’s vision of creating a place for
                 designer interior. Her passion is in the core of all we do. The
                 process of selecting the pieces for our family is meticulous and
                 careful.
               </div>
             </div>
-            <button className="cursor-pointer py-4 px-16 bg-[transparent] rounded-31xl box-border h-[72px] flex flex-row items-center justify-center border-[4px] border-solid border-brown">
-              <div className="relative text-5xl tracking-[0.15em] font-medium font-clash-grotesk text-brown text-left">
+            <button className="box-border flex h-[72px] cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-brown bg-[transparent] px-16 py-4">
+              <div className="relative text-left font-clash-grotesk text-5xl font-medium tracking-[0.15em] text-brown">
                 Read more
               </div>
             </button>
