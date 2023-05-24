@@ -14,7 +14,7 @@ const ReviewsSection: FunctionComponent = () => {
           alt=""
           src="/arrow-left.svg"
         />
-        <div className="w-[932px] flex flex-col items-start justify-center gap-[60px]">
+        <div className="w-[720px] flex flex-col items-start justify-center gap-[60px]">
           <div className="relative leading-[120%] font-light inline-block w-[932px]">
             "A vision of modern sophistication."
           </div>

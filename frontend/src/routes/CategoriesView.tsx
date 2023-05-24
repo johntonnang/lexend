@@ -37,30 +37,30 @@ companion for your luxurious lifestyle.
             </div>
           </div>
           <div className="w-[100%] h-[169px] lg:flex lg:flex-row lg:items-start lg:justify-between text-5xl text-black">
-      <div className="relative h-[255px]  pl-[16px] pr-[16px] lg:pl-[69px]">
-        <div
-          className="font-light inline-block w-[100%] lg:w-[60%]"
-          style={{
-            background: !isExpanded
-              ? 'linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e'
-              : 'linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: !  isExpanded ? 'transparent' : '',
-          }}
-        >
-          {isExpanded ? expandedText : collapsedText}
-        </div>
-        <div
-          className="relative left-[41.77%] leading-[120%] font-light cursor-pointer text-decoration: underline"
-          onClick={handleClick}
-        >
-          {isExpanded ? 'Read less' : '...Read more'}
-        </div>
-      </div>
-      <div className="absolute right-[0] leading-[120%] font-light text-black pr-[69px] w-[122px]">
-        6 products
-      </div>
-    </div>
+            <div className="relative h-[255px]  pl-[16px] pr-[16px] lg:pl-[69px]">
+              <div
+                className="font-light inline-block w-[100%] lg:w-[60%]"
+                style={{
+                  background: !isExpanded
+                    ? 'linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e'
+                    : 'linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: !isExpanded ? 'transparent' : '',
+                }}
+              >
+                {isExpanded ? expandedText : collapsedText}
+              </div>
+              <div
+                className="relative left-[41.77%] leading-[120%] font-light cursor-pointer text-decoration: underline"
+                onClick={handleClick}
+              >
+                {isExpanded ? 'Read less' : '...Read more'}
+              </div>
+            </div>
+            <div className="absolute right-[0] leading-[120%] font-light text-black pr-[69px] w-[122px]">
+              6 products
+            </div>
+          </div>
         </div>
         <div className="flex flex-col items-start justify-start gap-[84px]">
           <FurnitureSection
@@ -101,7 +101,7 @@ companion for your luxurious lifestyle.
       </div>
       <Navbar />
     </div>
-  );
+  )
 };
 
 export default CategoriesView;
