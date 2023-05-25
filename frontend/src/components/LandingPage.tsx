@@ -56,7 +56,7 @@ const LandingPage: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <div className="my-[176px]">
+      <div className="mt-[176px]">
         <div className="w-full flex-row items-start justify-start gap-[32px] overflow-hidden text-center sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:flex">
           {categories.map((category) => (
             <NavLink
