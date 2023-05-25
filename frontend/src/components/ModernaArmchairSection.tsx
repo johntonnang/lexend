@@ -3,11 +3,11 @@ import { FunctionComponent } from "react";
 const ModernaArmchairSection: FunctionComponent = () => {
   return (
 
-    <div className="w-full pt-[333px] bg-beige h-[1304px] flex flex-row  justify-center gap-[27px]  font-body-b1">
+    <div className="w-full pt-[333px] bg-beige h-[900px] flex flex-row items-start justify-center gap-[101px]  z-[1] text-left text-5xl text-black-200 font-body-b1">
 
-      <div className="flex flex-col items-center justify-start gap-[20px]">
+      <div className="flex flex-col items-center justify-start gap-[22.81px]">
         <img
-          className="w-[745px] h-[745px]"
+          className="w-[745px] h-[745px] overflow-hidden shrink-0 object-cover"
           alt=""
           src="/product-photo-1@2x.png"
         />
@@ -44,7 +44,7 @@ const ModernaArmchairSection: FunctionComponent = () => {
         </div>
       </div>
 
-      <div className="w-[600px] flex flex-col items-start justify-start gap-[110px]">
+      <div className="w-[800px] flex flex-col items-start justify-start gap-[110px]">
         <div className="flex flex-col items-start justify-start gap-[42px]">
           <div className="relative text-[64px] tracking-[-0.05em] inline-block w-[600px]">
             Moderna armchair
@@ -80,7 +80,7 @@ const ModernaArmchairSection: FunctionComponent = () => {
           </div>
         </div>
         <button className="cursor-pointer py-4 px-28 bg-brown rounded-31xl box-border w-[480px] h-[72px] flex flex-row items-center justify-center border-[4px] border-solid border-brown">
-          <div className="relative text-5xl tracking-[0.15em] font-medium font-clash-grotesk text-beige text-left">
+          <div className="relative text-5xl tracking-[0.15em] font-medium  text-beige text-left">
             Add to cart
           </div>
         </button>
