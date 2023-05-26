@@ -8,7 +8,7 @@ function Navbar(): JSX.Element {
   const { openCart, cartQuantity } = useShoppingCart()
   // const menuRef = useRef<HTMLDivElement>(null)
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true)
-  const [isHovered, setIsHovered] = useState(false)
+  // const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
     const handleScroll = (): void => {
@@ -30,7 +30,7 @@ function Navbar(): JSX.Element {
       className={`${
         isNavbarTransparent
           ? "bg-transparent text-white"
-          : "bg-beige text-black-100 drop-shadow-xl"
+          : "bg-beige text-black-100 drop-shadow-[0px_4px_18px_rgba(97,78,66,0.25)]"
       } fixed top-0 z-20 flex h-[148px] w-full transition-colors duration-500`}
     >
       {/* Hamburger menu button */}
@@ -207,13 +207,13 @@ function Navbar(): JSX.Element {
             <NavLink
               to="/chairs"
               className="z-40 font-medium tracking-[0.25em] text-[inherit] [text-decoration:none]"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
+              // onMouseEnter={() => setIsHovered(true)}
+              // onMouseLeave={() => setIsHovered(false)}
             >
               CHAIRS
-              {isHovered && (
+              {/* {isHovered && (
                 <div className="absolute bottom-0 left-0 h-0.5 w-full translate-y-2 transform bg-black-100 transition-all duration-300"></div>
-              )}
+              )} */}
             </NavLink>
             <NavLink
               to="/lamps"

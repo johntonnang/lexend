@@ -49,7 +49,7 @@ const LandingPage: FunctionComponent = () => {
                   </p>
                 </div>
               </div>
-              <button className="absolute box-border flex h-[72px] w-[233px] cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-black-100 bg-black-100 px-28 py-4 font-clash-grotesk text-13xl tracking-[0.15em] text-beige sm:top-[] md:top-[612px] lg:top-[312px]">
+              <button className="absolute box-border flex h-[72px] w-[233px] cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-black-100 bg-black-100 px-28 py-4 text-13xl tracking-[0.15em] text-beige sm:top-[] md:top-[612px] lg:top-[312px]">
                 Explore
               </button>
             </div>
