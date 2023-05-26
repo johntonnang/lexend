@@ -139,7 +139,6 @@ companion for your luxurious lifestyle.
           <Footer />
         </div>
         <Navbar2 />
-        <div></div>
       </div>
     </div>
   )
