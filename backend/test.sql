@@ -54,4 +54,4 @@ DELETE FROM categories
 WHERE category_id = 3;
 
 -- remove a table
-DROP TABLES categories;
+DROP TABLE categories;

@@ -14,19 +14,19 @@ const ProductPreview: FunctionComponent<ProductPreviewType> = ({
   productPrice,
 }) => {
   return (
-    <div className="w-[417px] h-[534px] flex flex-col items-start justify-start gap-[24px] text-left text-17xl text-black-100 font-body-b1">
+    <div className="flex h-[630px] w-full flex-col items-start justify-start gap-[24px] text-left font-body-b1 text-17xl text-black-100">
       <img
-        className="relative w-full h-[417px] object-cover"
+        className="relative h-[500px] w-full object-cover"
         alt=""
         src={productId}
       />
-      <div className="w-[417px] flex flex-row items-center justify-between">
-        <div className="relative tracking-[-0.07em] inline-block w-[327px] shrink-0">
+      <div className="flex w-full flex-row items-center justify-between">
+        <div className="relative inline-block w-[327px] shrink-0 tracking-[-0.07em]">
           {productName}
         </div>
-        <img className="relative w-[70px] h-[30px]" alt="" src={productColor} />
+        <img className="relative h-[30px] w-[70px]" alt="" src={productColor} />
       </div>
-      <div className="relative text-5xl leading-[120%] font-light inline-block w-72">
+      <div className="relative inline-block w-72 text-5xl font-light leading-[120%]">
         {productPrice}
       </div>
     </div>
