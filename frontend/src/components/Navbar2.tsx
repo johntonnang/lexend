@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import React, { useState, useEffect, useRef } from "react"
 
-
 function Navbar2(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { openCart, cartQuantity } = useShoppingCart()
