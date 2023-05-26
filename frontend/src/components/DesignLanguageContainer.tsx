@@ -21,7 +21,7 @@ const LexendContainer: FunctionComponent = () => {
         >
           The significance of choosing the right chair
         </div>
-        <p className="relative text-5xl leading-[120%] font-light text-[16px] lg:text-[24px] inline-block">
+        <p className="relative text-5xl leading-[120%] font-normal text-[16px] lg:text-[24px] inline-block">
         Chat or schedule a personal meeting with one of our experts on interior design to perfect your style.
         </p>
       </div>
