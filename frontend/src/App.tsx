@@ -29,16 +29,17 @@ function App() {
 
   return (
     <>
-      {categories.map((category) => (
-        <Routes>
-          <Route path="/" element={<HomeView />} />
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        {categories.map((category) => (
           <Route
+            key={category.category_id}
             path={`/${category.name.toLowerCase()}`}
             element={<CategoriesView />}
           />
-          <Route path="/detail" element={<DetailPage />} />
-        </Routes>
-      ))}
+        ))}
+        <Route path="/detail" element={<DetailPage />} />
+      </Routes>
     </>
   )
 }

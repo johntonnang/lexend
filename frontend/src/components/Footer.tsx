@@ -1,32 +1,41 @@
-import { FunctionComponent } from "react"
+import { useState, FunctionComponent } from "react"
+
+
 
 const Footer: FunctionComponent = () => {
+  const [showCustomerCare, setShowCustomerCare] = useState(false);
+const [showOurPolicies, setShowOurPolicies] = useState(false);
+const [showOurCompany, setShowOurCompany] = useState(false);
+
   return (
-    <div className="relative h-[460.47px] lg:h-[317px] w-full text-center font-body-b1 text-base text-white">
+    <div className="relative h-auto w-full text-center font-body-b1 text-base text-white">
 
         <div className="absolute bottom-[0%] left-[0%] right-[0%] top-[0%] h-full w-full bg-brown" />
 
-          <div className=" flex flex-col items-center justify-center py-[52px]">
+          <div className=" flex flex-col items-center justify-center lg:flex-row py-[52px]">
             <img
-              className="relative h-[88.47px] w-[165px]"
+              className="relative h-[88.47px] w-[165px] lg:pr-[80px]"
               alt=""
               src="/lexend101.svg"
             />
             <div>
-            <div className="py-[52px]">
+            <div className="py-[52px] lg:flex">
+              <div>
 
                 <div className="pb-[10px]">
-                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left ">
+                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left pb-[15px]">
                   Customer care
 
                 </b>
                 <img
-                  className="relative h-6 w-6 shrink-0 overflow-hidden"
+                  className="relative h-6 w-6 shrink-0 overflow-hidden lg:hidden"
                   alt=""
                   src="/Plus.svg"
+                  onClick={() => setShowCustomerCare(!showCustomerCare)}
                 />
 </div>
-                <div className="hidden">
+{(showCustomerCare || window.innerWidth >=1024 ) && (
+                <div className="flex flex-col text-left pl-[43px] lg:pl-[0]">
                 <div className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   Service and support
                 </div>
@@ -41,18 +50,23 @@ const Footer: FunctionComponent = () => {
                 </div>
 
               </div>
+              )}
+              </div>
+              <div>
               <div className="pb-[10px]">
-                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left ">
+                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left pb-[15px]">
 
                   Our policies
                 </b>
                 <img
-                  className="relative h-6 w-6 shrink-0 overflow-hidden"
+                  className="relative h-6 w-6 shrink-0 overflow-hidden lg:hidden"
                   alt=""
                   src="/Plus.svg"
+                  onClick={() => setShowOurPolicies(!showOurPolicies)}
                 />
-</div>
-                <div className="hidden">
+</div>{(showOurPolicies  || window.innerWidth >=1024) && (
+                <div className="flex flex-col text-left pl-[43px] lg:pl-[0]">
+
                 <div className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   Return
                 </div>
@@ -63,17 +77,22 @@ const Footer: FunctionComponent = () => {
                   Cookie policies
                 </div>
               </div>
+              )}
+              </div>
               <div>
-                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left">
+              <div>
+                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left pb-[15px]">
                   Our company
                 </b>
                 <img
-                  className="relative h-6 w-6 shrink-0 overflow-hidden"
+                  className="relative h-6 w-6 shrink-0 overflow-hidden lg:hidden"
                   alt=""
                   src="/Plus.svg"
+                  onClick={() => setShowOurCompany(!showOurCompany)}
                 />
                 </div>
-                <div className="hidden">
+                {(showOurCompany  || window.innerWidth >=1024) && (
+                <div className="flex flex-col text-left pl-[43px] lg:pl-[0]">
                 <div className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   About us
                 </div>
@@ -83,6 +102,8 @@ const Footer: FunctionComponent = () => {
                 <div className="relative inline-block h-[39px] w-[282px] shrink-0 leading-[120%]">
                   Becomes a sales partner
                 </div>
+                </div>
+                )}
                 </div>
               </div>
               <div className="flex flex-row items-center justify-center gap-[19px]">
