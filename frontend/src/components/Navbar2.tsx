@@ -3,7 +3,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext"
 import React, { useState, useEffect, useRef } from "react"
 
 
-function Navbar(): JSX.Element {
+function Navbar2(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { openCart, cartQuantity } = useShoppingCart()
   // const menuRef = useRef<HTMLDivElement>(null)
@@ -28,7 +28,7 @@ function Navbar(): JSX.Element {
   return (
     <nav
       className={`${isNavbarTransparent
-        ? "bg-transparent text-white"
+        ? "bg-transparent text-black"
         : "bg-beige text-black-100"
         } fixed top-0 z-20 flex h-[148px] w-full transition-colors duration-500`}
     >
@@ -95,7 +95,7 @@ function Navbar(): JSX.Element {
                 viewBox="0 0 165 83"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className={`${isNavbarTransparent ? "stroke-beige" : "stroke-black-100"
+                className={`${isNavbarTransparent ? "stroke-black-100" : "stroke-black-100"
                   } "relative duration-500" transition-colors `}
               >
                 <path
@@ -239,7 +239,7 @@ function Navbar(): JSX.Element {
                   viewBox="0 0 30 31"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`${isNavbarTransparent ? "fill-beige" : " fill-black-100"
+                  className={`${isNavbarTransparent ? "fill-black-100" : " fill-black-100"
                     } "relative duration-500" transition-colors `}
                 >
                   <g clip-path="url(#clip0_101_525)">
@@ -284,7 +284,7 @@ function Navbar(): JSX.Element {
                   viewBox="0 0 30 31"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`${isNavbarTransparent ? "fill-beige" : " fill-black-100"
+                  className={`${isNavbarTransparent ? "fill-black-100" : " fill-black-100"
                     } "relative duration-500" transition-colors `}
                 >
                   <g clip-path="url(#clip0_101_528)">
@@ -313,7 +313,7 @@ function Navbar(): JSX.Element {
                   viewBox="0 0 35 35"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`${isNavbarTransparent ? "fill-beige" : " fill-black-100"
+                  className={`${isNavbarTransparent ? "fill-black-100" : " fill-black-100"
                     } "relative duration-500" transition-colors `}
                 >
                   <path
@@ -331,4 +331,4 @@ function Navbar(): JSX.Element {
   )
 }
 
-export default Navbar
+export default Navbar2
