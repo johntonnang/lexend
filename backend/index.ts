@@ -33,7 +33,7 @@ app.get("/categories", async (request, response) => {
       if (!category.image) {
         const imagePath = path.join(
           __dirname,
-          `../frontend/public/${category.image_file}`
+          `../frontend/public/${category.image_url}`
         )
         const imageBuffer = fs.readFileSync(imagePath)
         const base64Image = imageBuffer.toString("base64")
@@ -47,6 +47,62 @@ app.get("/categories", async (request, response) => {
   } catch (error) {
     console.error("Error retrieving categories:", error)
     response.status(500).json({ error: "Unable to retrieve categories" })
+  }
+})
+
+app.get("/chairs", async (request, response) => {
+  try {
+    const result = await client.query(`SELECT * FROM chairs;`)
+    const chairs = result.rows
+
+    const chairsWithImages = []
+
+    for (const chair of chairs) {
+      if (!chair.image) {
+        const imagePath = path.join(
+          __dirname,
+          `../frontend/public/${chair.image_url}`
+        )
+        const imageBuffer = fs.readFileSync(imagePath)
+        const base64Image = imageBuffer.toString("base64")
+        chair.image = `${base64Image}`
+      }
+
+      chairsWithImages.push(chair)
+    }
+
+    response.json(chairsWithImages)
+  } catch (error) {
+    console.error("Error retrieving chairs:", error)
+    response.status(500).json({ error: "Unable to retrieve chairs" })
+  }
+})
+
+app.get("/products", async (request, response) => {
+  try {
+    const result = await client.query(`SELECT * FROM products;`)
+    const products = result.rows
+
+    const productsWithImages = []
+
+    for (const product of products) {
+      if (!product.image) {
+        const imagePath = path.join(
+          __dirname,
+          `../frontend/public/${product.image_url}`
+        )
+        const imageBuffer = fs.readFileSync(imagePath)
+        const base64Image = imageBuffer.toString("base64")
+        product.image = `${base64Image}`
+      }
+
+      productsWithImages.push(product)
+    }
+
+    response.json(productsWithImages)
+  } catch (error) {
+    console.error("Error retrieving chairs:", error)
+    response.status(500).json({ error: "Unable to retrieve chairs" })
   }
 })
 

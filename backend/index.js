@@ -36,7 +36,7 @@ app.get("/categories", (request, response) => __awaiter(void 0, void 0, void 0, 
         const categoriesWithImages = [];
         for (const category of categories) {
             if (!category.image) {
-                const imagePath = path_1.default.join(__dirname, `../frontend/public/${category.image_file}`);
+                const imagePath = path_1.default.join(__dirname, `../frontend/public/${category.image_url}`);
                 const imageBuffer = fs_1.default.readFileSync(imagePath);
                 const base64Image = imageBuffer.toString("base64");
                 category.image = `${base64Image}`;
@@ -48,6 +48,48 @@ app.get("/categories", (request, response) => __awaiter(void 0, void 0, void 0, 
     catch (error) {
         console.error("Error retrieving categories:", error);
         response.status(500).json({ error: "Unable to retrieve categories" });
+    }
+}));
+app.get("/chairs", (request, response) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const result = yield client.query(`SELECT * FROM chairs;`);
+        const chairs = result.rows;
+        const chairsWithImages = [];
+        for (const chair of chairs) {
+            if (!chair.image) {
+                const imagePath = path_1.default.join(__dirname, `../frontend/public/${chair.image_url}`);
+                const imageBuffer = fs_1.default.readFileSync(imagePath);
+                const base64Image = imageBuffer.toString("base64");
+                chair.image = `${base64Image}`;
+            }
+            chairsWithImages.push(chair);
+        }
+        response.json(chairsWithImages);
+    }
+    catch (error) {
+        console.error("Error retrieving chairs:", error);
+        response.status(500).json({ error: "Unable to retrieve chairs" });
+    }
+}));
+app.get("/products", (request, response) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const result = yield client.query(`SELECT * FROM products;`);
+        const products = result.rows;
+        const productsWithImages = [];
+        for (const product of products) {
+            if (!product.image) {
+                const imagePath = path_1.default.join(__dirname, `../frontend/public/${product.image_url}`);
+                const imageBuffer = fs_1.default.readFileSync(imagePath);
+                const base64Image = imageBuffer.toString("base64");
+                product.image = `${base64Image}`;
+            }
+            productsWithImages.push(product);
+        }
+        response.json(productsWithImages);
+    }
+    catch (error) {
+        console.error("Error retrieving chairs:", error);
+        response.status(500).json({ error: "Unable to retrieve chairs" });
     }
 }));
 app.listen(3000, () => {
