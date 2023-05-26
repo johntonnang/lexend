@@ -27,13 +27,10 @@ function Navbar2(): JSX.Element {
   return (
     <nav
       className={`${isNavbarTransparent
-        ? "bg-transparent text-black"
-        : "bg-beige text-black-100"
+        ? "bg-transparent text-black-100"
+        : "bg-beige text-black-100 drop-shadow-xl"
         } fixed top-0 z-20 flex h-[148px] w-full transition-colors duration-500`}
     >
-
-
-
 
       {/* Hamburger menu button */}
       <button
