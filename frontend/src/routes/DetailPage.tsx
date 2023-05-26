@@ -1,18 +1,16 @@
-
 import { FunctionComponent } from "react";
 import ModernaArmchairSection from "../components/ModernaArmchairSection";
 import ReviewsSection from "../components/ReviewsSection";
 import LookCompleter from "../components/LookCompleter";
 import NewsletterForm from "../components/NewsletterForm";
 import Footer from "../components/Footer"
-import Navbar from "../components/Navbar";
+import Navbar2 from "../components/Navbar2";
 
 const DetailPage: FunctionComponent = () => {
 
   return (
     <div className=" relative bg-beige w-full overflow-hidden flex flex-col items-center justify-start gap-[226px] text-left text-5xl text-black-200 font-clash-grotesk">
-
-      <Navbar textColor="black" />
+      <Navbar2 />
       <ModernaArmchairSection />
       <div className="bg-white w-[1728px] overflow-hidden flex flex-row py-[53px] px-[188px] box-border items-baseline justify-between z-[2]">
         <div className="flex flex-row items-start justify-start gap-[240px]">
@@ -71,6 +69,7 @@ const DetailPage: FunctionComponent = () => {
         <div className="relative text-5xl tracking-[0.15em] font-medium  text-brown text-left z-[0]">
           Chairs
         </div>
+
         <img
           className="absolute my-0 mx-[!important] top-[22px] left-[24px] w-[27px] h-[27px] overflow-hidden shrink-0 z-[1]"
           alt=""
@@ -79,6 +78,8 @@ const DetailPage: FunctionComponent = () => {
       </button>
 
     </div>
+
+
   );
 };
 

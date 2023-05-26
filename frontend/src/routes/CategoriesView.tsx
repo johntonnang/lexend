@@ -4,7 +4,7 @@ import LexendContainer from "../components/LexendContainer"
 import ChairContainer from "../components/ChairContainer"
 import NewsletterForm from "../components/NewsletterForm"
 import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
+import Navbar2 from "../components/Navbar2"
 
 interface Product {
   category_id: number
@@ -138,7 +138,7 @@ companion for your luxurious lifestyle.
           <NewsletterForm />
           <Footer />
         </div>
-        <Navbar />
+        <Navbar2 />
         <div></div>
       </div>
     </div>

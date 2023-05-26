@@ -2,13 +2,12 @@ import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import React, { useState, useEffect, useRef } from "react"
 
-
-function Navbar(): JSX.Element {
+function Navbar2(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { openCart, cartQuantity } = useShoppingCart()
   // const menuRef = useRef<HTMLDivElement>(null)
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true)
-  // const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
     const handleScroll = (): void => {
@@ -27,21 +26,20 @@ function Navbar(): JSX.Element {
 
   return (
     <nav
-      className={`${
-        isNavbarTransparent
-          ? "bg-transparent text-white"
-          : "bg-beige text-black-100 drop-shadow-[0px_4px_18px_rgba(97,78,66,0.25)]"
-      } fixed top-0 z-20 flex h-[148px] w-full transition-colors duration-500`}
+      className={`${isNavbarTransparent
+        ? "bg-transparent text-black-100"
+        : "bg-beige text-black-100 drop-shadow-xl"
+        } fixed top-0 z-20 flex h-[148px] w-full transition-colors duration-500`}
     >
+
       {/* Hamburger menu button */}
       <button
         className="block bg-transparent transition-colors duration-500 focus:outline-none lg:hidden"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         <svg
-          className={`h-8 w-8 ${
-            isNavbarTransparent ? "fill-white" : " fill-black-100"
-          } transition-colors duration-500`}
+          className={`h-8 w-8 ${isNavbarTransparent ? "fill-white" : " fill-black-100"
+            } transition-colors duration-500`}
           width="25"
           height="16"
           viewBox="0 0 25 16"
@@ -49,18 +47,16 @@ function Navbar(): JSX.Element {
           xmlns="http://www.w3.org/2000/svg"
         >
           <rect
-            className={`${
-              isMenuOpen ? "-rotate-45" : "block"
-            } origin-center transform duration-500`}
+            className={`${isMenuOpen ? "-rotate-45" : "block"
+              } origin-center transform duration-500`}
             y="7"
             width="25"
             height="2"
             rx="1"
           />
           <rect
-            className={`${
-              isMenuOpen ? "rotate-45" : "block"
-            } origin-center transform duration-500`}
+            className={`${isMenuOpen ? "rotate-45" : "block"
+              } origin-center transform duration-500`}
             x="12"
             y="14"
             width="13"
@@ -68,9 +64,8 @@ function Navbar(): JSX.Element {
             rx="1"
           />
           <rect
-            className={`${
-              isMenuOpen ? "rotate-45" : "block"
-            } origin-center transform duration-500`}
+            className={`${isMenuOpen ? "rotate-45" : "block"
+              } origin-center transform duration-500`}
             width="13"
             height="2"
             rx="1"
@@ -96,9 +91,8 @@ function Navbar(): JSX.Element {
                 viewBox="0 0 165 83"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className={`${
-                  isNavbarTransparent ? "stroke-beige" : "stroke-black-100"
-                } "relative duration-500" transition-colors `}
+                className={`${isNavbarTransparent ? "stroke-black-100" : "stroke-black-100"
+                  } "relative duration-500" transition-colors `}
               >
                 <path
                   d="M36.8965 56.4584C34.9481 54.2331 32.3569 52.6261 29.4577 51.8452C26.5585 51.0642 23.4846 51.1452 20.6333 52.0777C17.782 53.0101 15.2844 54.7512 13.4633 57.0758C11.6421 59.4004 10.5812 62.2017 10.4176 65.1177C10.254 68.0337 10.9953 70.9302 12.5456 73.433C14.0959 75.9358 16.384 77.9298 19.1141 79.1572C21.8442 80.3846 24.8908 80.7891 27.8603 80.3183C30.8297 79.8475 33.5854 78.5231 35.7712 76.5163"
@@ -207,13 +201,13 @@ function Navbar(): JSX.Element {
             <NavLink
               to="/chairs"
               className="z-40 font-medium tracking-[0.25em] text-[inherit] [text-decoration:none]"
-              // onMouseEnter={() => setIsHovered(true)}
-              // onMouseLeave={() => setIsHovered(false)}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
               CHAIRS
-              {/* {isHovered && (
+              {isHovered && (
                 <div className="absolute bottom-0 left-0 h-0.5 w-full translate-y-2 transform bg-black-100 transition-all duration-300"></div>
-              )} */}
+              )}
             </NavLink>
             <NavLink
               to="/lamps"
@@ -241,9 +235,8 @@ function Navbar(): JSX.Element {
                   viewBox="0 0 30 31"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    isNavbarTransparent ? "fill-beige" : " fill-black-100"
-                  } "relative duration-500" transition-colors `}
+                  className={`${isNavbarTransparent ? "fill-black-100" : " fill-black-100"
+                    } "relative duration-500" transition-colors `}
                 >
                   <g clip-path="url(#clip0_101_525)">
                     <path
@@ -287,9 +280,8 @@ function Navbar(): JSX.Element {
                   viewBox="0 0 30 31"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    isNavbarTransparent ? "fill-beige" : " fill-black-100"
-                  } "relative duration-500" transition-colors `}
+                  className={`${isNavbarTransparent ? "fill-black-100" : " fill-black-100"
+                    } "relative duration-500" transition-colors `}
                 >
                   <g clip-path="url(#clip0_101_528)">
                     <path
@@ -317,9 +309,8 @@ function Navbar(): JSX.Element {
                   viewBox="0 0 35 35"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    isNavbarTransparent ? "fill-beige" : " fill-black-100"
-                  } "relative duration-500" transition-colors `}
+                  className={`${isNavbarTransparent ? "fill-black-100" : " fill-black-100"
+                    } "relative duration-500" transition-colors `}
                 >
                   <path
                     fill-rule="evenodd"
@@ -336,4 +327,4 @@ function Navbar(): JSX.Element {
   )
 }
 
-export default Navbar
+export default Navbar2
