@@ -8,11 +8,11 @@ const [showOurPolicies, setShowOurPolicies] = useState(false);
 const [showOurCompany, setShowOurCompany] = useState(false);
 
   return (
-    <div className="relative h-auto w-full text-center font-body-b1 text-base text-white">
+    <div className="relative w-full text-center font-body-b1 text-base text-white">
 
         <div className="absolute bottom-[0%] left-[0%] right-[0%] top-[0%] h-full w-full bg-brown" />
 
-          <div className=" flex flex-col items-center justify-center lg:flex-row py-[52px]">
+          <div className=" flex flex-col items-center justify-around xl:flex-row py-[52px]">
             <img
               className="relative h-[88.47px] w-[165px] lg:pr-[80px]"
               alt=""
@@ -22,8 +22,8 @@ const [showOurCompany, setShowOurCompany] = useState(false);
             <div className="py-[52px] lg:flex">
               <div>
 
-                <div className="pb-[10px]">
-                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left pb-[15px]">
+                <div>
+                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left pb-[15px] font-medium lg:font-bold">
                   Customer care
 
                 </b>
@@ -53,8 +53,8 @@ const [showOurCompany, setShowOurCompany] = useState(false);
               )}
               </div>
               <div>
-              <div className="pb-[10px]">
-                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left pb-[15px]">
+              <div>
+                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left pb-[15px] font-medium lg:font-bold">
 
                   Our policies
                 </b>
@@ -81,7 +81,7 @@ const [showOurCompany, setShowOurCompany] = useState(false);
               </div>
               <div>
               <div>
-                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left pb-[15px]">
+                <b className="relative inline-block w-[282px] shrink-0 leading-[120%] text-left pb-[15px] font-medium lg:font-bold">
                   Our company
                 </b>
                 <img
@@ -105,8 +105,7 @@ const [showOurCompany, setShowOurCompany] = useState(false);
                 </div>
                 )}
                 </div>
-              </div>
-              <div className="flex flex-row items-center justify-center gap-[19px]">
+                <div className="flex flex-row lg:items-end items-start justify-center gap-[19px] pt-[54px]">
                 <img
                   className="relative h-6 w-6 shrink-0 overflow-hidden"
                   alt=""
@@ -123,6 +122,8 @@ const [showOurCompany, setShowOurCompany] = useState(false);
                   src="/mditwitter.svg"
                 />
               </div>
+              </div>
+
             </div>
 
       </div>
