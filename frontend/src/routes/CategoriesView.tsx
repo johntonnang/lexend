@@ -138,10 +138,9 @@ companion for your luxurious lifestyle.
 
         <LexendContainer />
         <ChairContainer />
-        <div className="z-[3] flex flex-col items-start justify-start">
           <NewsletterForm />
           <Footer />
-        </div>
+
         <Navbar2 />
       </div>
     </div>

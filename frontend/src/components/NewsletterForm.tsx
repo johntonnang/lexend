@@ -2,44 +2,35 @@ import { FunctionComponent } from "react"
 
 const NewsletterForm: FunctionComponent = () => {
   return (
-    <div className="flex w-full flex-col items-center justify-start bg-white text-left font-body-b1 text-29xl text-black-200">
-      <div className="flex w-full flex-row items-center justify-start gap-[87px]">
-        <img
-          className="relative h-[628px] w-1/2 object-cover"
+<div className="relative  w-full lg:flex lg:bg-white">
+         <img
+          className="relative lg:w-1/2 w-full  object-cover "
           alt=""
           src="/rectangle-104@2x.png"
         />
-        <div className="flex w-1/2 flex-col items-start justify-center gap-[87px]">
-          <div className="flex flex-col items-start justify-start">
-            <div className="w-1/2flex flex-col items-center justify-center">
-              <div className="flex w-[650px] flex-col items-center justify-start gap-[57px]">
-                <div
-                  className="font-lexend relative h-[60px] w-[657px] text-left font-body-b1 font-normal"
-                  style={{
-                    fontSize: "45px",
-                    lineHeight: "60px",
-                    letterSpacing: "-0.07em",
-                    color: "#000000",
-                  }}
-                >
-                  Become a member of our family
-                </div>
-                <div className="relative inline-block w-[613px] text-center text-5xl font-light leading-[120%]">{`Enjoy our newest pieces, exclusive events, limited offers and much more when joining our community. `}</div>
-              </div>
+      <div
+        className="absolute lg:relative top-[34px] lg:top-[0] bottom-[55px] left-[18px] right-[20px] bg-[#F2EBE3] lg:bg-white bg-opacity-90 flex flex-col items-center justify-center text-left font-body-b1 text-29xl text-black-200"
+      >
+        <div
+          className="flex flex-col items-center justify-center mx-[10px]"
+
+        >
+          <div className="text-center text-[24px] lg:text-[48px] tracking-[-0.07em] py-[22px] lg:py-[0] lg:pb-[32px] font-normail">Become a member of our family</div>
+          <div className="text-center text-[16px] lg:text-[24px] font-light leading-[120%] px-[35px] lg:px-[89px] pb-[18px] lg:pb-[87px]">
+            Enjoy our newest pieces, exclusive events, limited offers and much more when joining our community.
+          </div>
+        </div>
+        <div className="flex items-center justify-around px-8 lg:px[89px] gap-[19px] lg:gap-[32px]">
+          <input
+            className="h-[27px] w-[181px] lg:w-[404px] lg:h-[71px] font-light text-[8px] lg:text-[20px] rounded-31xl border-2 border-solid border-grey pl-[6px] lg:pl-[30px] focus:outline-none tracking-[0.15em] lg:tracking-[0.25em]"
+            type="text"
+            placeholder="Email adress"
+          />
+          <button className="h-[27px] w-[96px] lg:h-[72px] lg:w-[266px] rounded-31xl border-4 border-solid border-black-100 bg-black-100">
+            <div className="text-s font-medium tracking-[0.25em] text-beige text-[8px] lg:text-[24px] ">
+              Subscribe
             </div>
-          </div>
-          <div className="relative h-[72px] w-full">
-            <input
-              className="absolute left-[0%] right-[45.26%] flex h-full flex-col items-start justify-center rounded-31xl border-2 border-solid border-grey pl-8  text-xl focus:outline-none tracking-[0.15em] "
-              type="text"
-              placeholder="Email adress"
-            />
-            <button className="absolute left-[59.08%] right-[10.16%] box-border flex h-full cursor-pointer flex-row items-center justify-center rounded-31xl border-4 border-solid border-black-100 bg-black-100 px-16 py-4">
-              <div className="relative text-left text-5xl font-medium tracking-[0.15em] text-beige">
-                Subscribe
-              </div>
-            </button>
-          </div>
+          </button>
         </div>
       </div>
     </div>
