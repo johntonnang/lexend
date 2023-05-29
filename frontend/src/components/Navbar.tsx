@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import React, { useState, useEffect, useRef } from "react"
 
-
 function Navbar(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { openCart, cartQuantity } = useShoppingCart()
@@ -29,9 +28,9 @@ function Navbar(): JSX.Element {
     <nav
       className={`${
         isNavbarTransparent
-          ? "bg-transparent text-white"
+          ? "bg-beige text-black-100 lg:bg-transparent lg:text-white"
           : "bg-beige text-black-100 drop-shadow-[0px_4px_18px_rgba(97,78,66,0.25)]"
-      } fixed top-0 z-20 flex h-[148px] w-full transition-colors duration-500`}
+      } fixed top-0 z-20 flex h-[110px] w-full transition-colors duration-500 lg:h-[148px]`}
     >
       {/* Hamburger menu button */}
       <button
@@ -40,7 +39,9 @@ function Navbar(): JSX.Element {
       >
         <svg
           className={`h-8 w-8 ${
-            isNavbarTransparent ? "fill-white" : " fill-black-100"
+            isNavbarTransparent
+              ? "fill-black-100 lg:fill-white"
+              : " fill-black-100"
           } transition-colors duration-500`}
           width="25"
           height="16"

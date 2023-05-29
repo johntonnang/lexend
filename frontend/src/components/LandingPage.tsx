@@ -25,21 +25,21 @@ const LandingPage: FunctionComponent = () => {
   }
 
   return (
-    <div className="flex w-full flex-col items-center justify-start gap-[176px] bg-beige text-left font-body-b1 text-45xl text-black-200">
+    <div className="flex w-full flex-col items-center justify-start bg-beige text-left font-body-b1 text-37xl text-black-200 md:text-45xl lg:gap-[176px]">
       <div className="flex h-full flex-col items-start justify-start">
         <div className="flex h-full w-full flex-col items-center justify-start">
-          <div className="relative h-screen w-full">
+          <div className="relative w-full lg:h-screen">
             <img
               className="left-0 top-0 w-full object-cover"
               alt=""
               src="/cathanuri-yr9qtgsunsplash@2x.png"
             />
-            <div className="absolute left-[108px] top-[300.66px] flex flex-col items-start justify-center gap-[68px]">
-              <div className="relative h-[265px] w-[844px]">
-                <div className="absolute left-0 inline-block w-[858px] tracking-[-0.05em] sm:top-72 md:top-72 lg:top-0">
+            <div className="mx-6 mt-6 flex flex-col items-start justify-center gap-[32px] md:gap-[68px] lg:absolute lg:left-[108px] lg:top-[300.66px] lg:-m-0">
+              <div className="relative w-[300px] lg:h-[265px] lg:w-[844px]">
+                <div className="relative left-0 inline-block leading-[100%] tracking-[-0.05em] sm:top-72 md:top-72 lg:absolute lg:top-0">
                   Furniture that lasts forever
                 </div>
-                <div className="absolute left-0 top-[112px] inline-block h-[166px] w-[872px] text-17xl font-light leading-[120%] sm:top-72 md:top-[400px] lg:top-[112px]">
+                <div className="relative left-0 mt-4 inline-block text-4xl font-light leading-[120%] md:text-17xl lg:absolute lg:top-[112px] lg:m-0 lg:h-[166px] lg:w-[872px]">
                   <p className="m-0">
                     Sustainable design made from materials close to nature has
                     been the vision in our summer pieces.
@@ -49,54 +49,33 @@ const LandingPage: FunctionComponent = () => {
                   </p>
                 </div>
               </div>
-              <button className="absolute box-border flex h-[72px] w-[233px] cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-black-100 bg-black-100 px-28 py-4 text-13xl tracking-[0.15em] text-beige sm:top-[] md:top-[612px] lg:top-[312px]">
+              <button className="box-border flex cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-black-100 bg-black-100 px-6 py-2 text-base tracking-[0.15em] text-beige sm:top-[] md:top-[612px] lg:absolute lg:top-[312px] lg:h-[72px] lg:w-[233px] lg:px-28 lg:py-4 lg:text-13xl">
                 Explore
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-[176px]">
-        <div className="w-full flex-row items-start justify-start gap-[32px] overflow-hidden text-center sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:flex">
+      <div className="mx-6 mt-[88px] lg:mt-[176px]">
+        <div className="grid w-full grid-cols-2 gap-[12px] overflow-hidden text-center text-6xl md:gap-[32px] lg:flex lg:flex-row lg:items-start lg:justify-center lg:gap-[32px] lg:text-45xl">
           {categories.map((category) => (
             <NavLink
               key={category.category_id}
               to={`/${category.name.toLowerCase()}`}
-              className="relative h-[308px] w-[308px] overflow-hidden text-[inherit] [text-decoration:none]"
+              className="relative text-[inherit] [text-decoration:none]"
             >
-              <img
-                className="transition-scale relative h-full max-h-full w-full max-w-full overflow-hidden object-cover duration-500 hover:scale-110"
-                alt=""
-                src={`data:image/png;base64,${category.image}`}
-              />
+              <div className="h-[200px] w-full overflow-hidden md:h-[270px] md:w-[250px] lg:h-[308px] lg:w-[308px]">
+                <img
+                  className="transition-scale relative h-full max-h-full w-full max-w-full overflow-hidden object-cover duration-500 hover:scale-110"
+                  alt=""
+                  src={`data:image/png;base64,${category.image}`}
+                />
+              </div>
+              <div className="gap-[12px] overflow-hidden md:gap-[32px] lg:flex lg:flex-row lg:items-start lg:justify-center lg:gap-[32px]">
+                {category.name}
+              </div>
             </NavLink>
           ))}
-        </div>
-        <div className="flex-row items-start justify-center gap-[32px] overflow-hidden text-center md:grid md:grid-cols-2 lg:flex">
-          <NavLink
-            to="/chairs"
-            className="relative w-full overflow-hidden pt-6 text-[inherit] [text-decoration:none]"
-          >
-            Chairs
-          </NavLink>
-          <NavLink
-            to="/lamps"
-            className="relative w-full overflow-hidden pt-6 text-[inherit] [text-decoration:none]"
-          >
-            Lamps
-          </NavLink>
-          <NavLink
-            to="/sofas"
-            className="relative w-full overflow-hidden pt-6 text-[inherit] [text-decoration:none]"
-          >
-            Sofas
-          </NavLink>
-          <NavLink
-            to="/tables"
-            className="relative w-full overflow-hidden pt-6 text-[inherit] [text-decoration:none]"
-          >
-            Tables
-          </NavLink>
         </div>
       </div>
     </div>

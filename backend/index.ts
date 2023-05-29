@@ -50,37 +50,15 @@ app.get("/categories", async (request, response) => {
   }
 })
 
-app.get("/chairs", async (request, response) => {
+app.get("/products/:category", async (request, response) => {
+  const category = request.params.category
+
   try {
-    const result = await client.query(`SELECT * FROM chairs;`)
-    const chairs = result.rows
+    const result = await client.query(
+      `SELECT * FROM products WHERE category_id IN (SELECT category_id FROM categories WHERE name = $1);`,
+      [category]
+    )
 
-    const chairsWithImages = []
-
-    for (const chair of chairs) {
-      if (!chair.image) {
-        const imagePath = path.join(
-          __dirname,
-          `../frontend/public/${chair.image_url}`
-        )
-        const imageBuffer = fs.readFileSync(imagePath)
-        const base64Image = imageBuffer.toString("base64")
-        chair.image = `${base64Image}`
-      }
-
-      chairsWithImages.push(chair)
-    }
-
-    response.json(chairsWithImages)
-  } catch (error) {
-    console.error("Error retrieving chairs:", error)
-    response.status(500).json({ error: "Unable to retrieve chairs" })
-  }
-})
-
-app.get("/products", async (request, response) => {
-  try {
-    const result = await client.query(`SELECT * FROM products;`)
     const products = result.rows
 
     const productsWithImages = []
@@ -101,8 +79,8 @@ app.get("/products", async (request, response) => {
 
     response.json(productsWithImages)
   } catch (error) {
-    console.error("Error retrieving chairs:", error)
-    response.status(500).json({ error: "Unable to retrieve chairs" })
+    console.error("Error retrieving products:", error)
+    response.status(500).json({ error: "Unable to retrieve products" })
   }
 })
 

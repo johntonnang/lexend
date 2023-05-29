@@ -50,30 +50,10 @@ app.get("/categories", (request, response) => __awaiter(void 0, void 0, void 0, 
         response.status(500).json({ error: "Unable to retrieve categories" });
     }
 }));
-app.get("/chairs", (request, response) => __awaiter(void 0, void 0, void 0, function* () {
+app.get("/products/:category", (request, response) => __awaiter(void 0, void 0, void 0, function* () {
+    const category = request.params.category;
     try {
-        const result = yield client.query(`SELECT * FROM chairs;`);
-        const chairs = result.rows;
-        const chairsWithImages = [];
-        for (const chair of chairs) {
-            if (!chair.image) {
-                const imagePath = path_1.default.join(__dirname, `../frontend/public/${chair.image_url}`);
-                const imageBuffer = fs_1.default.readFileSync(imagePath);
-                const base64Image = imageBuffer.toString("base64");
-                chair.image = `${base64Image}`;
-            }
-            chairsWithImages.push(chair);
-        }
-        response.json(chairsWithImages);
-    }
-    catch (error) {
-        console.error("Error retrieving chairs:", error);
-        response.status(500).json({ error: "Unable to retrieve chairs" });
-    }
-}));
-app.get("/products", (request, response) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const result = yield client.query(`SELECT * FROM products;`);
+        const result = yield client.query(`SELECT * FROM products WHERE category_id IN (SELECT category_id FROM categories WHERE name = $1);`, [category]);
         const products = result.rows;
         const productsWithImages = [];
         for (const product of products) {
@@ -88,8 +68,8 @@ app.get("/products", (request, response) => __awaiter(void 0, void 0, void 0, fu
         response.json(productsWithImages);
     }
     catch (error) {
-        console.error("Error retrieving chairs:", error);
-        response.status(500).json({ error: "Unable to retrieve chairs" });
+        console.error("Error retrieving products:", error);
+        response.status(500).json({ error: "Unable to retrieve products" });
     }
 }));
 app.listen(3000, () => {

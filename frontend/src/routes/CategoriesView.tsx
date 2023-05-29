@@ -5,6 +5,7 @@ import ChairContainer from "../components/ChairContainer"
 import NewsletterForm from "../components/NewsletterForm"
 import Footer from "../components/Footer"
 import Navbar2 from "../components/Navbar2"
+import { useParams } from "react-router-dom"
 
 interface Product {
   category_id: number
@@ -17,24 +18,27 @@ interface Product {
 const CategoriesView: FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false)
   const [products, setProducts] = useState<Product[]>([])
+  const { category } = useParams<{ category: string }>()
 
   const handleClick = () => {
     setIsExpanded(!isExpanded)
   }
 
   useEffect(() => {
-    fetchCategories()
-  }, [])
-
-  const fetchCategories = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/products")
-      const data = await response.json()
-      setProducts(data)
-    } catch (error) {
-      console.error("Error fetching categories:", error)
+    const fetchProductsByCategory = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/products/${category}`
+        )
+        const data = await response.json()
+        setProducts(data)
+      } catch (error) {
+        console.error("Error fetching products:", error)
+      }
     }
-  }
+
+    fetchProductsByCategory()
+  }, [category])
 
   const expandedText = `
 Our collection of seating options is designed to elevate both
