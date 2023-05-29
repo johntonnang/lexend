@@ -61,7 +61,7 @@ const LandingPage: FunctionComponent = () => {
           {categories.map((category) => (
             <NavLink
               key={category.category_id}
-              to={`/${category.name.toLowerCase()}`}
+              to={`categories/${category.name}`}
               className="relative text-[inherit] [text-decoration:none]"
             >
               <div className="h-[200px] w-full overflow-hidden md:h-[270px] md:w-[250px] lg:h-[308px] lg:w-[308px]">

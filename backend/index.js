@@ -52,9 +52,13 @@ app.get("/categories", (request, response) => __awaiter(void 0, void 0, void 0, 
 }));
 app.get("/products/:category", (request, response) => __awaiter(void 0, void 0, void 0, function* () {
     const category = request.params.category;
+    console.log(request.params.category);
+    console.log(category);
     try {
         const result = yield client.query(`SELECT * FROM products WHERE category_id IN (SELECT category_id FROM categories WHERE name = $1);`, [category]);
+        console.log(category);
         const products = result.rows;
+        console.log(result.rows);
         const productsWithImages = [];
         for (const product of products) {
             if (!product.image) {
@@ -71,6 +75,36 @@ app.get("/products/:category", (request, response) => __awaiter(void 0, void 0, 
         console.error("Error retrieving products:", error);
         response.status(500).json({ error: "Unable to retrieve products" });
     }
+    // try {
+    //   // Hämta category_id baserat på category-namn
+    //   const categoryResult = await client.query(
+    //     `SELECT category_id FROM categories WHERE name = $1;`,
+    //     [category]
+    //   )
+    //   const categoryId = categoryResult.rows[0].category_id
+    //   // Hämta produkter med rätt category_id
+    //   const productsResult = await client.query(
+    //     `SELECT * FROM products WHERE category_id = $1;`,
+    //     [categoryId]
+    //   )
+    //   const products = productsResult.rows
+    //   const productsWithImages = []
+    //   for (const product of products) {
+    //     if (!product.image) {
+    //       const imagePath = path.join(
+    //         __dirname,
+    //         `../frontend/public/${product.image_url}`
+    //       )
+    //       const imageBuffer = fs.readFileSync(imagePath)
+    //       const base64Image = imageBuffer.toString("base64")
+    //       product.image = `${base64Image}`
+    //     }
+    //     productsWithImages.push(product)
+    //   }
+    //   response.json(productsWithImages)
+    // } catch (error) {
+    //   console.error(`Failed to fetch products: ${error}`)
+    // }
 }));
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");

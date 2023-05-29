@@ -34,7 +34,7 @@ function App() {
         {categories.map((category) => (
           <Route
             key={category.category_id}
-            path={`/${category.name.toLowerCase()}`}
+            path="/categories/:category"
             element={<CategoriesView />}
           />
         ))}
