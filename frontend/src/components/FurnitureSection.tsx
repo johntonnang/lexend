@@ -22,12 +22,12 @@ const FurnitureSection: FunctionComponent<FurnitureSectionType> = ({
       />
       <div>
         <div>
-          <div className="relative shrink-0 text-[16px] tracking-[-0.07em]">
+          <div className="relative shrink-0 text-[16px] lg:text-[36px] tracking-[-0.07em]">
             {furnitureName}
           </div>
         </div>
         <div className="flex space-x-12">
-          <div className="relative text-[16px] font-light leading-[120%]">
+          <div className="relative text-[16px] lg:text-[24px] font-light leading-[120%]">
             {furniturePrice}
           </div>
           <img
