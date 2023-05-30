@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from "react"
+import { FunctionComponent, useEffect, useState, useRef } from "react"
 import { NavLink } from "react-router-dom"
 
 interface Category {
@@ -9,6 +9,7 @@ interface Category {
 
 const LandingPage: FunctionComponent = () => {
   const [categories, setCategories] = useState<Category[]>([])
+  // const categoriesRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     fetchCategories()
@@ -24,11 +25,16 @@ const LandingPage: FunctionComponent = () => {
     }
   }
 
+  const handleExploreClick = () => {
+    const yPosition = 900
+    window.scrollTo({ top: yPosition, behavior: "smooth" })
+  }
+
   return (
     <div className="flex w-full flex-col items-center justify-start bg-beige text-left font-body-b1 text-37xl text-black-200 md:text-45xl lg:gap-[176px]">
       <div className="flex h-full flex-col items-start justify-start">
         <div className="flex h-full w-full flex-col items-center justify-start">
-          <div className="relative w-full lg:h-screen">
+          <div className="relative w-full">
             <img
               className="left-0 top-0 w-full object-cover"
               alt=""
@@ -49,14 +55,18 @@ const LandingPage: FunctionComponent = () => {
                   </p>
                 </div>
               </div>
-              <button className="box-border flex cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-black-100 bg-black-100 px-6 py-2 text-base tracking-[0.15em] text-beige sm:top-[] md:top-[612px] lg:absolute lg:top-[312px] lg:h-[72px] lg:w-[233px] lg:px-28 lg:py-4 lg:text-13xl">
+              <button
+                className="box-border flex cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-black-100 bg-black-100 px-6 py-2 text-base tracking-[0.15em] text-beige sm:top-[] md:top-[612px] lg:absolute lg:top-[312px] lg:h-[72px] lg:w-[233px] lg:px-28 lg:py-4 lg:text-13xl"
+                onClick={handleExploreClick}
+              >
                 Explore
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="mx-6 mt-[88px] lg:mt-[176px]">
+
+      <div className="mx-6 mt-[88px] lg:mt-0">
         <div className="grid w-full grid-cols-2 gap-[12px] overflow-hidden text-center text-6xl md:gap-[32px] lg:flex lg:flex-row lg:items-start lg:justify-center lg:gap-[32px] lg:text-45xl">
           {categories.map((category) => (
             <NavLink
@@ -66,12 +76,12 @@ const LandingPage: FunctionComponent = () => {
             >
               <div className="h-[200px] w-full overflow-hidden md:h-[270px] md:w-[250px] lg:h-[308px] lg:w-[308px]">
                 <img
-                  className="transition-scale relative h-full max-h-full w-full max-w-full overflow-hidden object-cover duration-500 hover:scale-110"
+                  className=" transition-scale relative h-full max-h-full w-full max-w-full overflow-hidden object-cover duration-500 hover:scale-110"
                   alt=""
                   src={`data:image/png;base64,${category.image}`}
                 />
               </div>
-              <div className="gap-[12px] overflow-hidden md:gap-[32px] lg:flex lg:flex-row lg:items-start lg:justify-center lg:gap-[32px]">
+              <div className="gap-[12px] overflow-hidden pt-[12px] md:gap-[32px] lg:flex lg:flex-row lg:items-start lg:justify-center lg:gap-[32px] lg:pt-[28px]">
                 {category.name}
               </div>
             </NavLink>
