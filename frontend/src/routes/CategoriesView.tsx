@@ -6,6 +6,8 @@ import NewsletterForm from "../components/NewsletterForm"
 import Footer from "../components/Footer"
 import Navbar2 from "../components/Navbar2"
 import { useParams } from "react-router-dom"
+import GobackButton from "../components/GobackButton"
+
 
 interface Product {
   category_id: number
@@ -58,7 +60,10 @@ companion for your luxurious lifestyle.
       <div className="text-black relative flex w-screen flex-col items-center justify-start overflow-hidden bg-beige text-left font-body-b1 text-[96px]">
         <div className="z-[0] flex w-[100%] flex-col items-center justify-start gap-[176px]">
           <div className="flex flex-col justify-start">
-            <div className="relative box-border flex h-[158px] w-[100%] flex-col  items-center justify-end overflow-hidden bg-[url(/public/frame-87@3x.png)] bg-cover bg-[top] bg-no-repeat px-0 py-[32px] min-[500px]:h-[250px] md:h-[400px] lg:h-[722px] lg:py-[64px]"></div>
+            <div className="relative box-border flex h-[158px] w-[100%] flex-col  items-center justify-end overflow-hidden bg-[url(/public/frame-87@3x.png)] bg-cover bg-[top] bg-no-repeat px-0 py-[32px] min-[500px]:h-[250px] md:h-[400px] lg:h-[722px] lg:py-[64px]">
+<GobackButton />
+            </div>
+
             <div className="relative left-[16px] mx-[!important]  my-0 pt-[32px] text-[48px] tracking-[-0.05em] lg:left-[69.5px] lg:pt-[176px] lg:text-[96px]">
               Chairs
             </div>
