@@ -2,12 +2,19 @@ import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import React, { useState, useEffect, useRef } from "react"
 
+interface Category {
+  category_id: number
+  name: string
+  image: string
+}
+
 function Navbar(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { openCart, cartQuantity } = useShoppingCart()
   // const menuRef = useRef<HTMLDivElement>(null)
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true)
   // const [isHovered, setIsHovered] = useState(false)
+  const [categories, setCategories] = useState<Category[]>([])
 
   useEffect(() => {
     const handleScroll = (): void => {
@@ -23,6 +30,20 @@ function Navbar(): JSX.Element {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [isNavbarTransparent])
+
+  useEffect(() => {
+    fetchCategories()
+  }, [])
+
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/categories")
+      const data = await response.json()
+      setCategories(data)
+    } catch (error) {
+      console.error("Error fetching categories:", error)
+    }
+  }
 
   return (
     <nav
@@ -205,35 +226,14 @@ function Navbar(): JSX.Element {
                 </defs>
               </svg>
             </NavLink>
-            <NavLink
-              to="/chairs"
-              className="z-40 font-medium tracking-[0.25em] text-[inherit] [text-decoration:none]"
-              // onMouseEnter={() => setIsHovered(true)}
-              // onMouseLeave={() => setIsHovered(false)}
-            >
-              CHAIRS
-              {/* {isHovered && (
-                <div className="absolute bottom-0 left-0 h-0.5 w-full translate-y-2 transform bg-black-100 transition-all duration-300"></div>
-              )} */}
-            </NavLink>
-            <NavLink
-              to="/lamps"
-              className="z-40 font-medium tracking-[0.25em] text-[inherit] [text-decoration:none]"
-            >
-              LAMPS
-            </NavLink>
-            <NavLink
-              to="/sofas"
-              className="z-40 font-medium tracking-[0.25em] text-[inherit] [text-decoration:none]"
-            >
-              SOFAS
-            </NavLink>
-            <NavLink
-              to="/tables"
-              className="z-40  font-medium tracking-[0.25em] text-[inherit] [text-decoration:none]"
-            >
-              TABLES
-            </NavLink>
+            {categories.map((category) => (
+              <NavLink
+                to={`categories/${category.name}`}
+                className="z-40 font-medium tracking-[0.25em] text-[inherit] [text-decoration:none]"
+              >
+                {category.name}
+              </NavLink>
+            ))}
             <div className="flex flex-row items-center justify-start gap-[50px]">
               <NavLink to="/" className="relative z-40 h-[30px] w-[30px]">
                 <svg

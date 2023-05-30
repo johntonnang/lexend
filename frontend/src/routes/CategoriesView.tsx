@@ -21,6 +21,7 @@ const CategoriesView: FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false)
   const [products, setProducts] = useState<Product[]>([])
   const { category } = useParams<{ category: string }>()
+  console.log(category)
 
   const handleClick = () => {
     setIsExpanded(!isExpanded)
@@ -65,7 +66,7 @@ companion for your luxurious lifestyle.
             </div>
 
             <div className="relative left-[16px] mx-[!important]  my-0 pt-[32px] text-[48px] tracking-[-0.05em] lg:left-[69.5px] lg:pt-[176px] lg:text-[96px]">
-              Chairs
+              {category}
             </div>
             <div className="text-black h-[169px] w-[100%] text-5xl lg:flex lg:flex-row lg:items-start lg:justify-between">
               <div className="relative h-[255px]  pl-[16px] pr-[16px] lg:pl-[69px]">
@@ -143,8 +144,8 @@ companion for your luxurious lifestyle.
 
         <LexendContainer />
         <ChairContainer />
-          <NewsletterForm />
-          <Footer />
+        <NewsletterForm />
+        <Footer />
 
         <Navbar2 />
       </div>
