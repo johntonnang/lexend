@@ -299,37 +299,53 @@ const DetailPage: FunctionComponent = () => {
           />
         ))}
 
-        <div className="z-[2] box-border flex w-[390px] flex-row items-baseline justify-between overflow-hidden bg-white py-[53px] lg:w-[1728px] lg:px-[58px] ">
-          <div className="flex flex-row items-start justify-start gap-[240px] ">
-            <div className=" items-centerjustify-start z-[3] flex flex-col gap-[32px] text-center font-body-b1 text-[24px] lg:text-[48px]">
-              <div className="relative tracking-[-0.07em] ">Product details</div>
-              <div className="flex lg:h-[371px] h-[371px] flex-row items-start justify-start text-[14px] lg:h-[283px] lg:text-5xl ">
-                <div className="items-startjustify-center box-border flex h-[412px] w-[118px] shrink-0 flex-col gap-[32px] overflow-hidden py-[57px] pl-[135px] pr-11 lg:w-[332px]">
-                  <b className="relative leading-[120%]">Measurements</b>
-                  <b className="relative leading-[120%]">Materials</b>
-                  <b className="relative inline-block w-[117px] leading-[120%] lg:w-[177px]">
-                    Specifications
-                  </b>
-                </div>
+        <div className="bg-white h-[483px] flex flex-col items-center justify-center gap-[32px] z-[2] lg:text-29xl text-[24px]">
+          <div className="relative tracking-[-0.07em]">Product details</div>
+          <div className="h-[236px] flex flex-row items-start justify-start lg:text-5xl text-[14px]">
+            <div className="w-[432px] h-[236px] overflow-hidden shrink-0 flex flex-col py-[57px] pr-11 pl-[135px] box-border items-start justify-center gap-[32px]">
+              <b className="relative leading-[120%]">Measurements</b>
+              <b className="relative leading-[120%]">Materials</b>
+              <b className="relative leading-[120%] inline-block w-[177px]">
+                Specifications
+              </b>
+            </div>
 
-                <div
-                  className="box-border flex  h-[80px]
-              w-[153px] shrink-0 flex-col items-start justify-center gap-[32px] overflow-hidden py-[57px] pl-[113px] pr-11 lg:h-[240px] gap-50px] lg:w-[1296px] " >
-                  <div className="relative inline-block w-[1183px] font-light leading-[120%]">{`Height: 84 cm. Width: 66 cm. Depth: 74 cm. Seat height: 46 cm. `}</div>
-                  <div className="relative inline-block w-[1183px] font-light leading-[120%]">{`Frame: Light oak. Upholstery: Premium white fabric. `}</div>
-                  <div className="relative inline-block w-[1183px] font-light leading-[120%]">
-                    {`Removable upholstery for easy cleaning. Follow included washing instructions. `}{" "}
-                  </div>
+            <div className="box-border flex w-[193px] shrink-0 flex-col items-start justify-center gap-[32px] overflow-hidden py-[57px] lg:pl-[113px] pl-[0px] pr-11 lg:h-[240px] h-[240px] gap-50px lg:w-[1296px] lg:hidden">
+              <div className="relative inline-block w-[1183px]font-light leading-[120%]">
+                {`Height: 84 cm. Width: 66 cm. Depth: 74 cm. Seat height: 46 cm. `}
+              </div>
+              <div className="relative inline-block w-[1183px] font-light leading-[120%]">
+                {`Frame: Light oak. Upholstery: Premium white fabric. `}
+              </div>
+              <div className="relative inline-block w-[1183px] font-light leading-[120%]">
+                {`Removable upholstery for easy cleaning. Follow included washing instructions. `}
+              </div>
+            </div>
+
+            <div className="hidden lg:block">
+              <div className="box-border flex h-[80px] w-[153px] shrink-0 flex-col items-start justify-center gap-[32px] overflow-hidden py-[57px] pl-[113px] pr-11 lg:h-[240px] gap-50px lg:w-[1296px]">
+                <div className="relative inline-block w-[1183px] font-light leading-[120%]">
+                  {`Height: 84 cm. Width: 66 cm. Depth: 74 cm. Seat height: 46 cm. `}
+                </div>
+                <div className="relative inline-block w-[1183px] font-light leading-[120%]">
+                  {`Frame: Light oak. Upholstery: Premium white fabric. `}
+                </div>
+                <div className="relative inline-block w-[1183px] font-light leading-[120%]">
+                  {`Removable upholstery for easy cleaning. Follow included washing instructions. `}
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+
+
+
         <div className="z-[4] flex flex-col items-center justify-start gap-[12px] lg:gap-[64px]">
           <div className="relative flex flex-col items-center justify-start gap-[103px]">
             <div className="z-[0]lg:gap-[6px] lg:relative lg:h-[822px] lg:w-[1735px]">
               <img
-                className="left-[0px] top-[0px] h-[185.52px] w-[254.81px] lg:absolute lg:h-[822px] lg:w-[1129px]"
+                className="left-[0px] top-[0px] h-[185.52px] w-[254.81px] lg:absolute lg:h-[822px]  lg:w-[1129px]"
                 alt=""
                 src="/rectangle-110@2x.png"
               />
@@ -357,10 +373,12 @@ const DetailPage: FunctionComponent = () => {
           <NewsletterForm />
           <Footer />
         </div>
-        <button className="lg:absolute lg:left-[39px] lg:top-[230px] lg:z-[9] lg:mx-[!important] lg:my-0 lg:box-border lg:flex lg:h-[72px] lg:cursor-pointer lg:flex-row lg:items-center lg:justify-center lg:gap-[8px] lg:rounded-31xl lg:border-[4px] lg:border-solid lg:border-brown lg:bg-[transparent] lg:px-14 lg:py-4">
-          <div className="relative z-[0] text-left text-5xl  font-medium tracking-[0.15em] text-brown">
+        <button className="hidden lg:block lg:absolute lg:left-[39px] lg:top-[230px] lg:z-[9] lg:mx-[!important] lg:my-0 lg:box-border lg:flex lg:h-[72px] lg:cursor-pointer lg:flex-row lg:items-center lg:justify-center lg:gap-[8px] lg:rounded-31xl lg:border-[4px] lg:border-solid lg:border-brown lg:bg-[transparent] lg:px-14 lg:py-4">
+          <div className="lg:relative lg:z-[0] lg:text-left lg:text-5xl  lg:font-medium lg:tracking-[0.15em] lg:text-brown">
             Chairs
           </div>
+
+
 
 
 
@@ -382,7 +400,7 @@ const DetailPage: FunctionComponent = () => {
 
 
 
-      </div>
+      </div >
     </>
   )
 }
