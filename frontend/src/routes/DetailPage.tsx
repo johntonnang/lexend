@@ -129,29 +129,28 @@ const DetailPage: FunctionComponent = () => {
             <div className="relative z-[8] h-[945px] w-[1508px]">
               <NewsletterForm />
               <Footer />
+            </div></div>
+          <button className="absolute left-[39px] top-[230px] z-[9] mx-[!important] my-0 box-border flex h-[72px] cursor-pointer flex-row items-center justify-center gap-[8px] rounded-31xl border-[4px] border-solid border-brown bg-[transparent] px-14 py-4">
+            <div className="relative z-[0] text-left text-5xl  font-medium tracking-[0.15em] text-brown">
+              Chairs
             </div>
-            <button className="absolute left-[39px] top-[230px] z-[9] mx-[!important] my-0 box-border flex h-[72px] cursor-pointer flex-row items-center justify-center gap-[8px] rounded-31xl border-[4px] border-solid border-brown bg-[transparent] px-14 py-4">
-              <div className="relative z-[0] text-left text-5xl  font-medium tracking-[0.15em] text-brown">
-                Chairs
-              </div>
 
-
-              <img
-                className="absolute my-0 mx-[!important] top-[22px] left-[24px] w-[27px] w-[27px] h-[27px] overflow-hidden shrink-0 z-[1]"
-                alt=""
-                src="/chevron-left1.svg"
-              />
-            </button>
 
             <img
-              className="absolute left-[24px] top-[22px] z-[1] mx-[!important] my-0 h-[27px] w-[27px] shrink-0 overflow-hidden"
+              className="absolute my-0 mx-[!important] top-[22px] left-[24px] w-[27px] w-[27px] h-[27px] overflow-hidden shrink-0 z-[1]"
               alt=""
               src="/chevron-left1.svg"
             />
           </button>
-        </div>
-      </>
-      )
+
+          <img
+            className="absolute left-[24px] top-[22px] z-[1] mx-[!important] my-0 h-[27px] w-[27px] shrink-0 overflow-hidden"
+            alt=""
+            src="/chevron-left1.svg"
+          />
+      </button>
+    </div>
+  )
 }
 
-      export default DetailPage
+export default DetailPage
