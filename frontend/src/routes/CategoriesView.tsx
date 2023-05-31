@@ -21,28 +21,24 @@ interface Product {
 const CategoriesView: FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false)
   const [products, setProducts] = useState<Product[]>([])
-  const { category } = useParams<{ category: string }>()
-  console.log(category)
 
   const handleClick = () => {
     setIsExpanded(!isExpanded)
   }
 
   useEffect(() => {
-    const fetchProductsByCategory = async () => {
-      try {
-        const response = await fetch(
-          `http://localhost:3000/products/${category}`
-        )
-        const data = await response.json()
-        setProducts(data)
-      } catch (error) {
-        console.error("Error fetching products:", error)
-      }
-    }
+    fetchCategories()
+  }, [])
 
-    fetchProductsByCategory()
-  }, [category])
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/products")
+      const data = await response.json()
+      setProducts(data)
+    } catch (error) {
+      console.error("Error fetching categories:", error)
+    }
+  }
 
   const expandedText = `
 Our collection of seating options is designed to elevate both
@@ -54,33 +50,24 @@ touch of sophistication to your space. We invite you to explore
 our exclusive chair collection and discover the perfect seating
 companion for your luxurious lifestyle.
 `
-  const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 1224 })
 
-  const collapsedText = `${expandedText.substring(0, 179)}`
-  const collapsedTextMobile = `${expandedText.substring(0, 105)}`
+  const collapsedText = `${expandedText.substring(0, 266)}`
 
   return (
     <div>
       <Navbar2 />
       <div className="relative h-[110px] bg-beige"></div>
       <div className="text-black relative flex w-screen flex-col items-center justify-start overflow-hidden bg-beige text-left font-body-b1 text-[96px]">
-        <div className="z-[0] flex w-[100%] flex-col items-center justify-start gap-[32px]">
+        <div className="z-[0] flex w-[100%] flex-col items-center justify-start gap-[176px]">
           <div className="flex flex-col justify-start">
-            <div className="relative box-border flex h-[158px] w-[100%] flex-col  items-center justify-end overflow-hidden bg-[url(/public/frame-87@3x.png)] bg-cover bg-[top] bg-no-repeat px-0 py-[32px] min-[500px]:h-[250px] md:h-[400px] lg:h-[722px] lg:py-[64px]">
-              <GobackButton />
-            </div>
-
+            <div className="relative box-border flex h-[158px] w-[100%] flex-col  items-center justify-end overflow-hidden bg-[url(/public/frame-87@3x.png)] bg-cover bg-[top] bg-no-repeat px-0 py-[32px] min-[500px]:h-[250px] md:h-[400px] lg:h-[722px] lg:py-[64px]"></div>
             <div className="relative left-[16px] mx-[!important]  my-0 pt-[32px] text-[48px] tracking-[-0.05em] lg:left-[69.5px] lg:pt-[176px] lg:text-[96px]">
-              {category}
+              Chairs
             </div>
-            <div className="text-black w-[100%] text-5xl lg:flex">
-              <div
-                className={`relative pl-[16px] pr-[16px] lg:pl-[69px] ${
-                  isExpanded ? "h-[260px]" : "h-[140px]"
-                }`}
-              >
+            <div className="text-black h-[169px] w-[100%] text-5xl lg:flex lg:flex-row lg:items-start lg:justify-between">
+              <div className="relative h-[255px]  pl-[16px] pr-[16px] lg:pl-[69px]">
                 <div
-                  className="inline-block w-[100%] pt-[24px] text-[16px] font-light lg:w-[70%] lg:pt-[32px] lg:text-[24px]"
+                  className="inline-block w-[100%] pt-[24px] text-[16px] font-light lg:w-[60%] lg:pt-[32px] lg:text-[24px]"
                   style={{
                     background: !isExpanded
                       ? "linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e"
@@ -89,11 +76,7 @@ companion for your luxurious lifestyle.
                     WebkitTextFillColor: !isExpanded ? "transparent" : "",
                   }}
                 >
-                  {isExpanded
-                    ? expandedText
-                    : isDesktopOrLaptop
-                    ? collapsedText
-                    : collapsedTextMobile}
+                  {isExpanded ? expandedText : collapsedText}
                 </div>
                 <div
                   className="relative left-[41.77%] cursor-pointer text-[14px] font-semibold leading-[120%]  underline lg:text-[18px]"
@@ -107,7 +90,7 @@ companion for your luxurious lifestyle.
               </div>
             </div>
           </div>
-          <div className="mb-[64px] flex flex-wrap justify-center gap-[12px] lg:mb-[176px] lg:gap-[64px]">
+          <div className=" mb-[64px] flex flex-wrap justify-center gap-10 lg:mb-[176px]">
             {products.map((product) => (
               <NavLink
                 key={product.product_id}
@@ -163,8 +146,11 @@ companion for your luxurious lifestyle.
 
         <LexendContainer />
         <ChairContainer />
-        <NewsletterForm />
-        <Footer />
+        <div className="z-[3] flex flex-col items-start justify-start">
+          <NewsletterForm />
+          <Footer />
+        </div>
+        <Navbar2 />
       </div>
     </div>
   )

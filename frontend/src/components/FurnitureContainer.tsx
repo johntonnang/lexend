@@ -23,9 +23,9 @@ const FurnitureContainer: FunctionComponent<FurnitureContainerType> = ({
   }, [propLineHeight]);
 
   return (
-    <div className="flex flex-col items-start justify-center gap-[21px] text-left text-5xl text-black-200 font-body-b1">
+    <div className="flex flex-col items-start justify-center lg:gap-[21px] gap-[8.33px] lg:text-left lg:text-5xl text-black-200 font-body-b1">
       <img
-        className="w-[417px] h-[307px] overflow-hidden shrink-0 object-cover"
+        className="lg:w-[417px] w-[165.51px] lg:h-[307px] h-[177.52px] overflow-hidden shrink-0 object-cover"
         alt=""
         src={furniturePrice}
       />
