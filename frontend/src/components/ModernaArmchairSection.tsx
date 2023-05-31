@@ -1,124 +1,133 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from "react"
 
-const ModernaArmchairSection: FunctionComponent = () => {
+type FurnitureSectionType = {
+  furnitureName?: string
+  furniturePrice?: number
+  furnitureImage?: string
+  furnitureDescription?: string
+}
+
+const ModernaArmchairSection: FunctionComponent<FurnitureSectionType> = ({
+  furnitureName,
+  furniturePrice,
+  furnitureImage,
+  furnitureDescription,
+}) => {
   return (
-
-    <div className="w-full pt-[333px] bg-beige h-[900px] flex flex-row items-start justify-center gap-[101px]  z-[1] text-left text-5xl text-black-200 font-body-b1">
-
+    <div className="z-[1] flex h-[900px] w-full flex-row items-start justify-center gap-[101px] bg-beige  pt-[333px] text-left font-body-b1 text-5xl text-black-200">
       <div className="flex flex-col items-center justify-start gap-[22.81px]">
         <img
-          className="w-[745px] h-[745px] overflow-hidden shrink-0 object-cover"
+          className="h-[745px] w-[745px] shrink-0 overflow-hidden object-cover"
           alt=""
-          src="/product-photo-1@2x.png"
+          src={furnitureImage}
         />
 
         <div className="flex flex-row items-center justify-center gap-[17.73px]">
           <img
-            className="relative w-[30px] h-[30px] overflow-hidden shrink-0"
+            className="relative h-[30px] w-[30px] shrink-0 overflow-hidden"
             alt=""
             src="/chevron-left.svg"
           />
           <div className="flex flex-row items-end justify-start gap-[25.16px]">
             <img
-              className="relative w-[8.58px] h-[8.58px]"
+              className="relative h-[8.58px] w-[8.58px]"
               alt=""
               src="/ellipse-2.svg"
             />
             <img
-              className="relative w-[8.58px] h-[8.58px]"
+              className="relative h-[8.58px] w-[8.58px]"
               alt=""
               src="/ellipse-1.svg"
             />
             <img
-              className="relative w-[8.58px] h-[8.58px]"
+              className="relative h-[8.58px] w-[8.58px]"
               alt=""
               src="/ellipse-3.svg"
             />
           </div>
           <img
-            className="relative w-[30px] h-[30px] overflow-hidden shrink-0"
+            className="relative h-[30px] w-[30px] shrink-0 overflow-hidden"
             alt=""
             src="/chevron-right.svg"
           />
-
         </div>
       </div>
 
-      <div className="w-[800px] flex flex-col items-start justify-start gap-[110px]">
+      <div className="flex w-[800px] flex-col items-start justify-start gap-[110px]">
         <div className="flex flex-col items-start justify-start gap-[42px]">
-          <div className="relative text-[64px] tracking-[-0.05em] inline-block w-[600px]">
-            Moderna armchair
+          <div className="relative inline-block w-[600px] text-[64px] tracking-[-0.05em]">
+            {furnitureName}
           </div>
-          <div className="font-light text-base lg:text-lg xl:text-xl w-[800px]">
-            Relax in style with the Moderna armchair – a true masterpiece of modern design. Crafted from the finest materials, this chair combines luxury with simplicity to create a stunning addition to any interior.
+          <div className="lg:text-lg w-[800px] text-base font-light xl:text-xl">
+            {furnitureDescription}
           </div>
 
-          <div className="w-[741px] flex flex-col items-start justify-start gap-[14px]">
-            <div className="relative leading-[120%] font-light">
+          <div className="flex w-[741px] flex-col items-start justify-start gap-[14px]">
+            <div className="relative font-light leading-[120%]">
               Color: White
             </div>
             <div className="flex flex-row items-start justify-start gap-[14px]">
               <img
-                className="relative w-[51px] h-[51px]"
+                className="relative h-[51px] w-[51px]"
                 alt=""
                 src="/white.svg"
               />
               <img
-                className="relative w-[50px] h-[50px]"
+                className="relative h-[50px] w-[50px]"
                 alt=""
                 src="/brown.svg"
               />
               <img
-                className="relative w-[50px] h-[50px]"
+                className="relative h-[50px] w-[50px]"
                 alt=""
                 src="/black.svg"
               />
             </div>
           </div>
-          <div className="relative text-13xl leading-[120%] font-light inline-block w-[736px]">
-            12 000 SEK
+          <div className="relative inline-block w-[736px] text-13xl font-light leading-[120%]">
+            {furniturePrice}
           </div>
         </div>
-        <button className="cursor-pointer py-4 px-28 bg-brown rounded-31xl box-border w-[480px] h-[72px] flex flex-row items-center justify-center border-[4px] border-solid border-brown">
-          <div className="relative text-5xl tracking-[0.15em] font-medium  text-beige text-left">
+        <button className="box-border flex h-[72px] w-[480px] cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-brown bg-brown px-28 py-4">
+          <div className="relative text-left text-5xl font-medium  tracking-[0.15em] text-beige">
             Add to cart
           </div>
         </button>
-        <div className="w-[600px] h-[22px] flex flex-row items-center justify-between text-base">
+        <div className="flex h-[22px] w-[600px] flex-row items-center justify-between text-base">
           <div className="flex flex-row items-center justify-start gap-[24px]">
             <img
-              className="relative w-6 h-6 overflow-hidden shrink-0"
+              className="relative h-6 w-6 shrink-0 overflow-hidden"
               alt=""
               src="/check2.svg"
             />
-            <div className="relative leading-[120%] font-light">
+            <div className="relative font-light leading-[120%]">
               Free delivery
             </div>
           </div>
           <div className="flex flex-row items-center justify-start gap-[24px]">
             <img
-              className="relative w-6 h-6 overflow-hidden shrink-0"
+              className="relative h-6 w-6 shrink-0 overflow-hidden"
               alt=""
               src="/check21.svg"
             />
-            <div className="relative leading-[120%] font-light">
+            <div className="relative font-light leading-[120%]">
               Quality guarantee
             </div>
           </div>
           <div className="flex flex-row items-center justify-start gap-[24px]">
             <img
-              className="relative w-6 h-6 overflow-hidden shrink-0"
+              className="relative h-6 w-6 shrink-0 overflow-hidden"
               alt=""
               src="/check2.svg"
             />
-            <div className="relative leading-[120%] font-light">
+            <div className="relative font-light leading-[120%]">
               3 years warranty
             </div>
           </div>
         </div>
       </div>
-    </div >
-  );
-};
+    </div>
+  )
+}
 
-export default ModernaArmchairSection;
+export default ModernaArmchairSection

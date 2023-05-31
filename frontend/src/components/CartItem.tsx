@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { Button, Stack } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { formatCurrency } from "../utilities/formatCurrency"
@@ -30,7 +30,7 @@ export function CartItem({ id, quantity }: CartItemProps): JSX.Element {
   useEffect(() => {
     const fetchItem = async (): Promise<void> => {
       try {
-        const response = await fetch("/data/items.json")
+        const response = await fetch("http://localhost:3000/product")
         const data = await response.json()
         const product = data.find((p: Product) => p.id === id)
         setItem(product)

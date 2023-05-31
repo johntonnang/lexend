@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState, useRef } from "react"
+import { FunctionComponent, useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 
 interface Category {
@@ -32,6 +32,7 @@ const LandingPage: FunctionComponent = () => {
 
   return (
     <div className="flex w-full flex-col items-center justify-start bg-beige text-left font-body-b1 text-37xl text-black-200 md:text-45xl lg:gap-[176px]">
+      <div className="relative h-[110px] bg-beige lg:hidden"></div>
       <div className="flex h-full flex-col items-start justify-start">
         <div className="flex h-full w-full flex-col items-center justify-start">
           <div className="relative w-full">

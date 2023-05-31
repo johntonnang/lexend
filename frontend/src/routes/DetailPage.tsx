@@ -1,18 +1,56 @@
-import { FunctionComponent } from "react"
+import { FunctionComponent, useEffect, useState } from "react"
 import ModernaArmchairSection from "../components/ModernaArmchairSection"
 import ReviewsSection from "../components/ReviewsSection"
 import LookCompleter from "../components/LookCompleter"
 import NewsletterForm from "../components/NewsletterForm"
 import Footer from "../components/Footer"
 import Navbar2 from "../components/Navbar2"
+import { useParams } from "react-router-dom"
+
+interface Product {
+  product_id: number
+  category_id: number
+  name: string
+  image: string
+  extra_image_url: string
+  price: number
+  description: string
+}
 
 const DetailPage: FunctionComponent = () => {
+  const [products, setProducts] = useState<Product[]>([])
+  const { product } = useParams<{ product: string }>()
+  console.log(product)
+
+  useEffect(() => {
+    const fetchProductsByProduct = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/product/${product}`)
+        const data = await response.json()
+        console.log(response)
+        setProducts(data)
+      } catch (error) {
+        console.error("Error fetching products:", error)
+      }
+    }
+
+    fetchProductsByProduct()
+  }, [product])
+
   return (
     <>
       <Navbar2 />
 
       <div className=" relative flex w-full flex-col items-center justify-start gap-[226px] overflow-hidden bg-beige text-left font-clash-grotesk text-5xl text-black-200">
-        <ModernaArmchairSection />
+        {products.map((product) => (
+          <ModernaArmchairSection
+            furnitureImage={`data:image/png;base64,${product.image}`}
+            furnitureName={product.name}
+            furniturePrice={product.price}
+            furnitureDescription={product.description}
+          />
+        ))}
+        {/* <ModernaArmchairSection /> */}
         <div className="z-[2] box-border flex w-[1728px] flex-row items-baseline justify-between overflow-hidden bg-white px-[188px] py-[53px]">
           <div className="flex flex-row items-start justify-start gap-[240px]">
             <div className="z-[3] flex flex-col items-center justify-start gap-[32px] font-body-b1 text-29xl">

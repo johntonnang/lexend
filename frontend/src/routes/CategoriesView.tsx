@@ -5,11 +5,12 @@ import ChairContainer from "../components/ChairContainer"
 import NewsletterForm from "../components/NewsletterForm"
 import Footer from "../components/Footer"
 import Navbar2 from "../components/Navbar2"
-import { useParams } from "react-router-dom"
+import { NavLink, useParams } from "react-router-dom"
 import GobackButton from "../components/GobackButton"
 import { useMediaQuery } from "react-responsive"
 
 interface Product {
+  product_id: number
   category_id: number
   name: string
   image: string
@@ -61,6 +62,7 @@ companion for your luxurious lifestyle.
   return (
     <div>
       <Navbar2 />
+      <div className="relative h-[110px] bg-beige"></div>
       <div className="text-black relative flex w-screen flex-col items-center justify-start overflow-hidden bg-beige text-left font-body-b1 text-[96px]">
         <div className="z-[0] flex w-[100%] flex-col items-center justify-start gap-[32px]">
           <div className="flex flex-col justify-start">
@@ -100,19 +102,25 @@ companion for your luxurious lifestyle.
                   {isExpanded ? "Read less" : "...Read more"}
                 </div>
               </div>
-              <div className="text-black relative left-[16px] w-[122px] whitespace-nowrap pr-[69px] text-[16px] font-light leading-[120%] text-[#28221EB2]  lg:text-[24px]">
+              <div className="text-black lg: relative left-[16px] w-[122px] whitespace-nowrap pr-[69px] text-[16px] font-light leading-[120%] text-[#28221EB2] lg:left-0 lg:w-[200px] lg:pt-[32px] lg:text-[24px]">
                 6 products
               </div>
             </div>
           </div>
           <div className="mb-[64px] flex flex-wrap justify-center gap-[12px] lg:mb-[176px] lg:gap-[64px]">
             {products.map((product) => (
-              <FurnitureSection
-                furnitureImage={`data:image/png;base64,${product.image}`}
-                furnitureName={product.name}
-                furnitureDimensions={product.extra_image_url}
-                furniturePrice={product.price}
-              />
+              <NavLink
+                key={product.product_id}
+                to={`/product/${product.name}`}
+                className="text-inherit [text-decoration:none]"
+              >
+                <FurnitureSection
+                  furnitureImage={`data:image/png;base64,${product.image}`}
+                  furnitureName={product.name}
+                  furnitureDimensions={product.extra_image_url}
+                  furniturePrice={product.price}
+                />
+              </NavLink>
             ))}
             {/* <FurnitureSection
               furnitureImage="/rectangle-37@2x.png"

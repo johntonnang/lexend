@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
-import React, { useState, useRef, useEffect } from "react"
+import { useState, useEffect } from "react"
 
 interface Category {
   category_id: number
@@ -34,6 +34,7 @@ function Navbar2(): JSX.Element {
       flex h-[110px] w-full bg-beige text-black-100 drop-shadow-[0px_4px_18px_rgba(97,78,66,0.25)] transition-colors duration-500 lg:h-[148px]"
     >
       {/* Hamburger menu button */}
+
       <div className="mx-4 mb-4 flex w-full flex-row items-end justify-between bg-transparent transition-colors focus:outline-none lg:hidden">
         <div className="flex w-full justify-start">
           <button
@@ -249,7 +250,7 @@ function Navbar2(): JSX.Element {
         <div className="ml-6 mt-[32px] flex flex-col gap-[16px] font-body-b1">
           {categories.map((category) => (
             <NavLink
-              to={`categories/${category.name}`}
+              to={`/categories/${category.name}`}
               className="z-40 my-2 font-medium tracking-[0.05em] text-[inherit] [text-decoration:none]"
             >
               {category.name}
@@ -461,7 +462,7 @@ function Navbar2(): JSX.Element {
             </NavLink>
             {categories.map((category) => (
               <NavLink
-                to={`categories/${category.name}`}
+                to={`/categories/${category.name}`}
                 className="z-40 font-medium tracking-[0.25em] text-[inherit] [text-decoration:none]"
               >
                 {category.name}

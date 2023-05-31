@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  type ReactNode,
-  useContext,
-  useState,
-} from "react"
+import { createContext, type ReactNode, useContext, useState } from "react"
 import { ShoppingCart } from "../components/ShoppingCart"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 
@@ -36,7 +31,7 @@ const ShoppingCartContextValue = createContext<ShoppingCartContext>({
   increaseCartQuantity: undefined,
   decreaseCartQuantity: undefined,
   removeFromCart: undefined,
-  getItemQuantity: (id) => 0,
+  getItemQuantity: () => 0,
   cartQuantity: 0,
   cartItems: [],
 } satisfies ShoppingCartContext)
