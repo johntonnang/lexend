@@ -253,6 +253,7 @@ import NewsletterForm from "../components/NewsletterForm"
 import Footer from "../components/Footer"
 import Navbar2 from "../components/Navbar2"
 import { useParams } from "react-router-dom"
+import GobackButton from "../components/GobackButton"
 
 interface Product {
   product_id: number
@@ -287,7 +288,8 @@ const DetailPage: FunctionComponent = () => {
   return (
     <>
       <Navbar2 />
-      <div className=" relative flex w-full flex-col items-center justify-start gap-[396px] overflow-hidden bg-beige text-left font-clash-grotesk text-5xl text-black-200">
+
+      <div className=" relative flex w-full flex-col items-center justify-start gap-[176px] overflow-hidden bg-beige text-left font-clash-grotesk text-5xl text-black-200">
         {products.map((product) => (
           <ModernaArmchairSection
             furnitureImage={`data:image/png;base64,${product.image}`}
@@ -296,12 +298,13 @@ const DetailPage: FunctionComponent = () => {
             furnitureDescription={product.description}
           />
         ))}
-        <div className="z-[2] box-border flex w-[390px] flex-row items-baseline justify-between overflow-hidden bg-white py-[53px] lg:w-[1728px] lg:px-[188px]">
-          <div className="flex flex-row items-start justify-start gap-[240px]">
-            <div className="items-centerjustify-start z-[3] flex flex-col gap-[32px] text-center font-body-b1 text-[24px] lg:text-29xl">
-              <div className="relative tracking-[-0.07em]">Product details</div>
-              <div className="flex h-[371px] flex-row items-start justify-start text-[14px] lg:h-[236px] lg:text-5xl">
-                <div className="items-startjustify-center box-border flex h-[212px] w-[117px] shrink-0 flex-col gap-[32px] overflow-hidden py-[57px] pl-[135px] pr-11 lg:w-[332px]">
+
+        <div className="z-[2] box-border flex w-[390px] flex-row items-baseline justify-between overflow-hidden bg-white py-[53px] lg:w-[1728px] lg:px-[58px] ">
+          <div className="flex flex-row items-start justify-start gap-[240px] ">
+            <div className=" items-centerjustify-start z-[3] flex flex-col gap-[32px] text-center font-body-b1 text-[24px] lg:text-[48px]">
+              <div className="relative tracking-[-0.07em] ">Product details</div>
+              <div className="flex lg:h-[371px] h-[371px] flex-row items-start justify-start text-[14px] lg:h-[283px] lg:text-5xl ">
+                <div className="items-startjustify-center box-border flex h-[412px] w-[118px] shrink-0 flex-col gap-[32px] overflow-hidden py-[57px] pl-[135px] pr-11 lg:w-[332px]">
                   <b className="relative leading-[120%]">Measurements</b>
                   <b className="relative leading-[120%]">Materials</b>
                   <b className="relative inline-block w-[117px] leading-[120%] lg:w-[177px]">
@@ -310,10 +313,8 @@ const DetailPage: FunctionComponent = () => {
                 </div>
 
                 <div
-                  className="box-border flex  h-[68px]
-              w-[183px]
-              shrink-0 flex-col items-start justify-center gap-[32px] overflow-hidden py-[57px] pl-[113px] pr-11 lg:h-[236px] lg:w-[1296px]"
-                >
+                  className="box-border flex  h-[80px]
+              w-[153px] shrink-0 flex-col items-start justify-center gap-[32px] overflow-hidden py-[57px] pl-[113px] pr-11 lg:h-[240px] gap-50px] lg:w-[1296px] " >
                   <div className="relative inline-block w-[1183px] font-light leading-[120%]">{`Height: 84 cm. Width: 66 cm. Depth: 74 cm. Seat height: 46 cm. `}</div>
                   <div className="relative inline-block w-[1183px] font-light leading-[120%]">{`Frame: Light oak. Upholstery: Premium white fabric. `}</div>
                   <div className="relative inline-block w-[1183px] font-light leading-[120%]">
@@ -356,17 +357,31 @@ const DetailPage: FunctionComponent = () => {
           <NewsletterForm />
           <Footer />
         </div>
-        <button className="absolute left-[39px] top-[230px] z-[9] mx-[!important] my-0 box-border flex h-[72px] cursor-pointer flex-row items-center justify-center gap-[8px] rounded-31xl border-[4px] border-solid border-brown bg-[transparent] px-14 py-4">
+        <button className="lg:absolute lg:left-[39px] lg:top-[230px] lg:z-[9] lg:mx-[!important] lg:my-0 lg:box-border lg:flex lg:h-[72px] lg:cursor-pointer lg:flex-row lg:items-center lg:justify-center lg:gap-[8px] lg:rounded-31xl lg:border-[4px] lg:border-solid lg:border-brown lg:bg-[transparent] lg:px-14 lg:py-4">
           <div className="relative z-[0] text-left text-5xl  font-medium tracking-[0.15em] text-brown">
             Chairs
           </div>
+
+
+
 
           <img
             className="absolute left-[24px] top-[22px] z-[1] mx-[!important] my-0 h-[27px] w-[27px] shrink-0 overflow-hidden"
             alt=""
             src="/chevron-left1.svg"
           />
+
         </button>
+
+
+        <img
+          className="absolute left-[24px] top-[150px] z-[1] mx-[!important] my-0 h-[27px] w-[27px] shrink-0 overflow-hidden lg:hidden"
+          alt=""
+          src="/chevron-left1.svg"
+        />
+
+
+
       </div>
     </>
   )

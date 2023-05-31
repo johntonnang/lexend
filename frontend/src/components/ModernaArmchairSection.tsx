@@ -170,7 +170,7 @@ const ModernaArmchairSection: FunctionComponent<FurnitureSectionType> = ({
   furnitureDescription,
 }) => {
   return (
-    <div className="z-[1] flex h-[544px] w-full flex-row items-start justify-center gap-[101px] bg-beige  pt-[390px] text-left font-body-b1 text-5xl text-black-200">
+    <div className="z-[1] flex lg:h-[1147px] h-[964.46px] w-full flex-row items-start justify-center gap-[101px] bg-beige  lg:pt-[390px] pt-[50px] text-left font-body-b1 text-5xl text-black-200">
       <div className="z-[0] flex flex-col items-center justify-start lg:w-[1638px] lg:flex-row lg:gap-[40px]">
         <div className="flex flex-col items-center justify-start gap-[20px]">
           <img
@@ -211,7 +211,7 @@ const ModernaArmchairSection: FunctionComponent<FurnitureSectionType> = ({
           </div>
         </div>
 
-        <div className="flex h-[745px] w-[336px] flex-col items-start justify-start gap-[110px] lg:w-[745px]">
+        <div className="flex h-[745px] w-[336px] flex-col items-start justify-start gap-[60px] lg:w-[745px]">
           <div className="flex flex-col items-start justify-start gap-[62px]">
             <div
               className="
@@ -220,7 +220,7 @@ const ModernaArmchairSection: FunctionComponent<FurnitureSectionType> = ({
               {furnitureName}
             </div>
             <div className="lg:hidden">
-              <div className="relative inline-block w-[736px] text-13xl font-light leading-[120%]">
+              <div className="relative inline-block w-[736px] text-13xl font-light leading-[120%] ">
                 {furniturePrice}
               </div>
             </div>
@@ -258,11 +258,11 @@ const ModernaArmchairSection: FunctionComponent<FurnitureSectionType> = ({
                 />
               </div>
             </div>
-            <div className="relative inline-block hidden w-[736px] text-13xl font-light leading-[120%] lg:inline-block">
+            <div className="relative inline-block hidden w-[736px] text-13xl font-light leading-[120%] lg:inline-block ">
               12 000 SEK
             </div>
           </div>
-          <button className="box-border flex h-[72px] w-[330px] cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-brown bg-brown px-28 py-4 lg:w-[480px]">
+          <button className="box-border flex h-[72px] w-[330px] cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-brown bg-brown px-28 py-4 lg:w-[480px] ">
             <div
               className="text-[16px]tracking-[0.15em] relative
             text-left font-medium  text-beige lg:text-5xl"

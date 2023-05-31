@@ -18,13 +18,14 @@ const LookCompleter: FunctionComponent = () => {
             furniturePriceSEK="10 500 SEK"
             propLineHeight="120%"
           />
+          <div className="hidden lg:block">
 
-          <FurnitureContainer
-            furniturePrice="/frame-46@2x.png"
-            furnitureName="Solitude sofa"
-            furniturePriceSEK="14 000 SEK"
-            propLineHeight="120%"
-          />
+            <FurnitureContainer
+              furniturePrice="/frame-46@2x.png"
+              furnitureName="Solitude sofa"
+              furniturePriceSEK="14 000 SEK"
+              propLineHeight="120%"
+            /></div>
 
 
         </div>
