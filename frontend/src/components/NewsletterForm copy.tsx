@@ -30,7 +30,7 @@ const NewsletterForm: FunctionComponent = () => {
           </div>
           <div className="relative h-[72px] w-full">
             <input
-              className="absolute left-[0%] right-[45.26%] flex h-full flex-col items-start justify-center rounded-31xl border-2 border-solid border-grey pl-8  text-xl focus:outline-none tracking-[0.15em] "
+              className="absolute left-[0%] right-[45.26%] flex h-full flex-col items-start justify-center rounded-31xl border-2 border-solid border-grey pl-8  text-xl tracking-[0.15em] focus:outline-none "
               type="text"
               placeholder="Email adress"
             />

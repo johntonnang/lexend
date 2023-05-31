@@ -40,7 +40,7 @@ import { FunctionComponent } from "react"
 
 const ClaraSection: FunctionComponent = () => {
   return (
-    <div className="flex  w-full flex-col items-start justify-start bg-white pb-[78px] text-center font-body-b1 text-37xl text-black-200 lg:h-full lg:pb-0">
+    <div className="flex w-full flex-col items-start justify-start bg-white pb-[78px] text-center font-body-b1 text-37xl text-black-200 lg:h-full lg:pb-0">
       <div className="flex flex-col items-center justify-start lg:flex-row">
         <img
           className="relative h-[541px] w-full object-cover object-top lg:h-[719px] lg:w-1/2"

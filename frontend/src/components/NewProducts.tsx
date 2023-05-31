@@ -19,7 +19,7 @@ const NewProducts: FunctionComponent = () => {
             </div>
           </div>
         </div>
-        <div className="flex h-[298px] flex-row items-center justify-center gap-[18px] overflow-x-scroll text-left text-17xl text-black-100 lg:h-full lg:gap-[64px]">
+        <div className="no-scrollbar flex h-[298px] w-full flex-row items-center justify-start overflow-x-scroll text-left text-base text-black-100 lg:h-full lg:gap-[64px] lg:text-17xl">
           <ProductPreview
             productId="/rectangle-81@2x.png"
             productName="Flowerpot Lamp"
@@ -27,14 +27,14 @@ const NewProducts: FunctionComponent = () => {
             productPrice={3200}
           />
           <ProductPreview
-            productId="/rectangle-82@2x.png"
-            productName="Oaki doaki chair"
+            productId="/rectangle-821@2x.png"
+            productName="Moderna armchair"
             productColor="/colors1.svg"
             productPrice={12000}
           />
           <ProductPreview
-            productId="/rectangle-821@2x.png"
-            productName="Moderna armchair"
+            productId="/rectangle-373@2x.png"
+            productName="Wooden dining chair"
             productColor="/colors.svg"
             productPrice={3000}
           />
