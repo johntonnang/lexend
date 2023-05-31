@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef } from 'react'
+import FrameComponent from "./FrameComponent"
+
 
 function Navbar2(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -25,12 +27,14 @@ function Navbar2(): JSX.Element {
   }, [isNavbarTransparent])
 
   return (
+
     <nav
       className={`${isNavbarTransparent
         ? "bg-transparent text-black-100"
         : "bg-beige text-black-100 drop-shadow-xl"
         } fixed top-0 z-20 flex h-[148px] w-full transition-colors duration-500`}
     >
+
 
       {/* Hamburger menu button */}
       <button
@@ -46,6 +50,7 @@ function Navbar2(): JSX.Element {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
+
           <rect
             className={`${isMenuOpen ? "-rotate-45" : "block"
               } origin-center transform duration-500`}
@@ -72,8 +77,10 @@ function Navbar2(): JSX.Element {
           />
         </svg>
       </button>
+
       {/* Mobile/tablet nav links */}
       {isMenuOpen && (
+
         <div className="mobile-nav-links">
           <NavLink to="/chairs">CHAIRS</NavLink>
           <NavLink to="/lamps">LAMPS</NavLink>
@@ -81,6 +88,8 @@ function Navbar2(): JSX.Element {
           <NavLink to="/tables">TABLES</NavLink>
         </div>
       )}
+
+
       <div className="hidden w-full flex-col items-start justify-start lg:flex">
         <div className="flex w-full flex-col items-center justify-start">
           <div className="box-border flex w-full shrink-0 flex-row items-end justify-between overflow-hidden px-[108px] py-8 font-clash-grotesk text-5xl">
@@ -91,9 +100,11 @@ function Navbar2(): JSX.Element {
                 viewBox="0 0 165 83"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+
                 className={`${isNavbarTransparent ? "stroke-black-100" : "stroke-black-100"
                   } "relative duration-500" transition-colors `}
               >
+
                 <path
                   d="M36.8965 56.4584C34.9481 54.2331 32.3569 52.6261 29.4577 51.8452C26.5585 51.0642 23.4846 51.1452 20.6333 52.0777C17.782 53.0101 15.2844 54.7512 13.4633 57.0758C11.6421 59.4004 10.5812 62.2017 10.4176 65.1177C10.254 68.0337 10.9953 70.9302 12.5456 73.433C14.0959 75.9358 16.384 77.9298 19.1141 79.1572C21.8442 80.3846 24.8908 80.7891 27.8603 80.3183C30.8297 79.8475 33.5854 78.5231 35.7712 76.5163"
                   stroke-width="3.09651"
@@ -153,6 +164,7 @@ function Navbar2(): JSX.Element {
                   width="20"
                   height="34"
                 >
+
                   <rect
                     x="40"
                     y="49.5441"
@@ -262,6 +274,7 @@ function Navbar2(): JSX.Element {
                   </defs>
                 </svg>
               </NavLink>
+
               <button
                 onClick={openCart}
                 // className={`${
@@ -317,6 +330,7 @@ function Navbar2(): JSX.Element {
                     clip-rule="evenodd"
                     d="M21.875 10.9375C21.875 12.0978 21.4141 13.2106 20.5936 14.0311C19.7731 14.8516 18.6603 15.3125 17.5 15.3125C16.3397 15.3125 15.2269 14.8516 14.4064 14.0311C13.5859 13.2106 13.125 12.0978 13.125 10.9375C13.125 9.77718 13.5859 8.66438 14.4064 7.84391C15.2269 7.02344 16.3397 6.5625 17.5 6.5625C18.6603 6.5625 19.7731 7.02344 20.5936 7.84391C21.4141 8.66438 21.875 9.77718 21.875 10.9375V10.9375ZM17.5 17.5C19.2405 17.5 20.9097 16.8086 22.1404 15.5779C23.3711 14.3472 24.0625 12.678 24.0625 10.9375C24.0625 9.19702 23.3711 7.52782 22.1404 6.29711C20.9097 5.0664 19.2405 4.375 17.5 4.375C15.7595 4.375 14.0903 5.0664 12.8596 6.29711C11.6289 7.52782 10.9375 9.19702 10.9375 10.9375C10.9375 12.678 11.6289 14.3472 12.8596 15.5779C14.0903 16.8086 15.7595 17.5 17.5 17.5V17.5ZM30.625 28.4375C30.625 30.625 28.4375 30.625 28.4375 30.625H6.5625C6.5625 30.625 4.375 30.625 4.375 28.4375C4.375 26.25 6.5625 19.6875 17.5 19.6875C28.4375 19.6875 30.625 26.25 30.625 28.4375ZM28.4375 28.4288C28.4353 27.8906 28.1006 26.2719 26.6175 24.7887C25.1913 23.3625 22.5072 21.875 17.5 21.875C12.4906 21.875 9.80875 23.3625 8.3825 24.7887C6.89938 26.2719 6.56688 27.8906 6.5625 28.4288H28.4375Z"
                   />
+
                 </svg>
               </NavLink>
             </div>
@@ -324,7 +338,9 @@ function Navbar2(): JSX.Element {
         </div>
       </div>
     </nav>
+
   )
+
 }
 
 export default Navbar2
