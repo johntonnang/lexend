@@ -15,7 +15,7 @@ module.exports = {
       },
       fontFamily: {
         "body-b1": "Lexend",
-        "clash-grotesk": "'Clash Grotesk'",
+        "clash-grotesk": "ClashGrotesk-Medium",
         inter: "Inter",
       },
       borderRadius: {

@@ -41,7 +41,7 @@ const LandingPage: FunctionComponent = () => {
               src="/cathanuri-yr9qtgsunsplash@2x.png"
             />
             <div className="mx-6 mt-6 flex flex-col items-start justify-center gap-[32px] md:gap-[68px] lg:absolute lg:left-[108px] lg:top-[300.66px] lg:-m-0">
-              <div className="relative w-[300px] lg:h-[265px] lg:w-[844px]">
+              <div className="relative w-[300px] md:w-[400px] lg:h-[265px] lg:w-[844px]">
                 <div className="relative left-0 inline-block leading-[100%] tracking-[-0.05em] sm:top-72 md:top-72 lg:absolute lg:top-0">
                   Furniture that lasts forever
                 </div>

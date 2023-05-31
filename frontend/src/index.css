@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Clash+Grotesk:wght@500&display=swap");
+@import url('assets/clash-grotesk/css/clash-grotesk.css');
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
 @tailwind base;
 @tailwind components;
@@ -7,6 +7,16 @@
 
 body {
   @apply leading-[normal] m-0;
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 *,

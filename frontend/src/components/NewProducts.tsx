@@ -19,7 +19,7 @@ const NewProducts: FunctionComponent = () => {
             </div>
           </div>
         </div>
-        <div className="flex h-[298px] w-full flex-row items-center justify-start overflow-x-scroll text-left text-base text-black-100 lg:h-full lg:gap-[64px] lg:text-17xl">
+        <div className="no-scrollbar flex h-[298px] w-full flex-row items-center justify-start overflow-x-scroll text-left text-base text-black-100 lg:h-full lg:gap-[64px] lg:text-17xl">
           <ProductPreview
             productId="/rectangle-81@2x.png"
             productName="Flowerpot Lamp"
