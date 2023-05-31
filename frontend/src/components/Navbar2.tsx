@@ -507,7 +507,7 @@ function Navbar2(): JSX.Element {
                 className="relative z-40 cursor-pointer bg-transparent"
               >
                 {cartQuantity > 0 && (
-                  <div className="absolute h-6 w-6 -translate-x-3 translate-y-4 transform rounded-full bg-black-100 text-center text-base text-white">
+                  <div className="absolute h-6 w-6 -translate-x-4 translate-y-4 transform rounded-full bg-black-100 text-center text-base text-white">
                     {cartQuantity}
                   </div>
                 )}
