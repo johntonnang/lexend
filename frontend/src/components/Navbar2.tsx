@@ -504,13 +504,10 @@ function Navbar2(): JSX.Element {
               </NavLink>
               <button
                 onClick={openCart}
-                // className={`${
-                //   isNavbarTransparent ? "color-white" : " color-black-100"
-                // } bg-transparent transition-colors duration-500`}
                 className="relative z-40 cursor-pointer bg-transparent"
               >
                 {cartQuantity > 0 && (
-                  <div className="absolute h-6 w-6 -translate-y-2 translate-x-6 transform rounded-full bg-black-100 text-center text-white">
+                  <div className="absolute h-6 w-6 -translate-x-3 translate-y-4 transform rounded-full bg-black-100 text-center text-base text-white">
                     {cartQuantity}
                   </div>
                 )}
@@ -520,8 +517,7 @@ function Navbar2(): JSX.Element {
                   viewBox="0 0 30 31"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className=" relative
-                  fill-black-100"
+                  className="relative fill-black-100"
                 >
                   <g clip-path="url(#clip0_101_528)">
                     <path
@@ -549,7 +545,7 @@ function Navbar2(): JSX.Element {
                   viewBox="0 0 35 35"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className=" relative
+                  className="relative
                   fill-black-100"
                 >
                   <path
