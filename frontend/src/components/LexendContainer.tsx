@@ -16,7 +16,7 @@ const LexendContainer: FunctionComponent = () => {
         >
           <div className="flex flex-col items-start justify-start">
             <div
-              className="relative  lg:pl-[150px] lg:pr-[50px] tracking-[-0.07em] leading-[120%] inline-block text-[24px] lg:text-[48px] lg:font-normal font-light"
+              className="relative pt-[16px] lg:pt-[0px] lg:pl-[150px] lg:pr-[50px] tracking-[-0.07em] leading-[120%] inline-block text-[24px] lg:text-[48px] lg:font-normal font-light"
 
             >
               Lexend’s design language

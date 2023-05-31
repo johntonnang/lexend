@@ -2,15 +2,15 @@ import { FunctionComponent } from "react"
 
 const NewsletterForm: FunctionComponent = () => {
   return (
-    <div className="relative w-full lg:flex lg:bg-white">
+    <div className="relative w-full flex lg:bg-white">
       <img
         className="relative w-full object-cover  lg:w-1/2 "
         alt=""
         src="/rectangle-104@2x.png"
       />
-      <div className="absolute bottom-[55px] left-[18px] right-[18px] top-[34px] flex flex-col items-center justify-center bg-[#F2EBE3] bg-opacity-90 text-left font-body-b1 text-29xl text-black-200 lg:relative lg:left-0 lg:right-0 lg:top-[0] lg:bg-white">
+      <div className="absolute bottom-[25px] left-[18px] right-[18px] top-[34px] flex flex-col items-center justify-center bg-[#F2EBE3] bg-opacity-90 text-left font-body-b1 text-29xl text-black-200 lg:relative lg:left-0 lg:right-0 lg:top-[0] lg:bg-white">
         <div className="mx-[10px] flex flex-col items-center justify-center">
-          <div className="font-normail py-[22px] text-center text-[24px] tracking-[-0.07em] lg:py-[0] lg:pb-[32px] lg:text-[48px]">
+          <div className="font-normail pb-[22px] text-center text-[24px] tracking-[-0.07em] lg:py-[0] lg:pb-[32px] lg:text-[48px]">
             Become a member of our family
           </div>
           <div className="px-[35px] pb-[18px] text-center text-[16px] font-light leading-[120%] lg:px-[89px] lg:pb-[87px] lg:text-[24px]">

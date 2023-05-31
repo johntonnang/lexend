@@ -13,7 +13,7 @@ const ChairContainer: FunctionComponent = () => {
     >
       <div className="flex flex-col items-start justify-start ">
         <div
-          className="relative tracking-[-0.07em] leading-[120%] inline-block text-[24px] lg:text-[48px] lg:font-normal font-light"
+          className="relative tracking-[-0.07em] leading-[120%] inline-block text-[24px] lg:text-[48px] lg:font-normal font-light pt-[16px] "
 
         >
           The significance of choosing the right chair
