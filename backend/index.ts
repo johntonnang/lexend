@@ -90,6 +90,46 @@ app.get("/products/:category", async (request, response) => {
   }
 })
 
+app.get("/product/:product", async (request, response) => {
+  const product = request.params.product
+  console.log(request.params.product)
+  console.log(product)
+
+  try {
+    const result = await client.query(
+      `SELECT * FROM products WHERE product_id IN (SELECT product_id FROM products WHERE name = $1);`,
+      [product]
+    )
+
+    console.log(product)
+
+    const products = result.rows
+
+    console.log(result.rows)
+
+    const productsWithImages = []
+
+    for (const product of products) {
+      if (!product.image) {
+        const imagePath = path.join(
+          __dirname,
+          `../frontend/public/${product.image_url}`
+        )
+        const imageBuffer = fs.readFileSync(imagePath)
+        const base64Image = imageBuffer.toString("base64")
+        product.image = `${base64Image}`
+      }
+
+      productsWithImages.push(product)
+    }
+
+    response.json(productsWithImages)
+  } catch (error) {
+    console.error("Error retrieving products:", error)
+    response.status(500).json({ error: "Unable to retrieve products" })
+  }
+})
+
 app.listen(3000, () => {
   console.log("Server is listening on port 3000")
 })

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { Button, Offcanvas, Stack } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { CartItem } from "./CartItem"
@@ -30,7 +30,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps): JSX.Element {
   useEffect(() => {
     const fetchProductItems = async (): Promise<void> => {
       try {
-        const response = await fetch("/data/items.json")
+        const response = await fetch("http://localhost:3000/product/")
         const data = await response.json()
         setProductItems(data)
       } catch (error) {
@@ -42,16 +42,42 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps): JSX.Element {
   }, [])
 
   return (
+    // <Offcanvas
+    //   show={isOpen}
+    //   onHide={closeCart}
+    //   className="absolute right-0 top-0 z-50 h-screen w-full overflow-hidden bg-beige lg:w-[864px]"
+    // >
+    //   <Offcanvas.Header closeButton className="w-[20px] text-black-200">
+    //     <Offcanvas.Title className="text-black-">Shopping cart</Offcanvas.Title>
+    //   </Offcanvas.Header>
+    //   <Offcanvas.Body>
+    //     <Stack gap={3}>
+    //       {cartItems.map((item) => (
+    //         <CartItem key={item.id} {...item} />
+    //       ))}
+    //       <div className="fw-bold fs-5 ms-auto">
+    //         Total{" "}
+    //         {formatCurrency(
+    //           cartItems.reduce((total, cartItem) => {
+    //             const item = productItems.find((i) => i.id === cartItem.id)
+    //             return total + (item?.price ?? 0) * cartItem.quantity
+    //           }, 0)
+    //         )}
+    //       </div>
+    //       <button className="my-4 w-full bg-brown">Continue to checkout</button>
+    //     </Stack>
+    //   </Offcanvas.Body>
+    // </Offcanvas>
     <Offcanvas show={isOpen} onHide={closeCart} placement="end">
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Cart</Offcanvas.Title>
+        <Offcanvas.Title>Shopping cart</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Stack gap={3}>
           {cartItems.map((item) => (
             <CartItem key={item.id} {...item} />
           ))}
-          <div className="ms-auto fw-bold fs-5">
+          <div className="fw-bold fs-5 ms-auto">
             Total{" "}
             {formatCurrency(
               cartItems.reduce((total, cartItem) => {
@@ -62,7 +88,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps): JSX.Element {
           </div>
         </Stack>
         <Button
-          className="w-full my-4"
+          className="my-4 w-full"
           variant="outline-dark"
           size="sm"
           href="/checkout"

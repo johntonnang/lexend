@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
-import React, { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 
 interface Category {
   category_id: number
@@ -11,7 +11,6 @@ interface Category {
 function Navbar(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { openCart, cartQuantity } = useShoppingCart()
-  // const menuRef = useRef<HTMLDivElement>(null)
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true)
   // const [isHovered, setIsHovered] = useState(false)
   const [categories, setCategories] = useState<Category[]>([])
@@ -269,7 +268,7 @@ function Navbar(): JSX.Element {
         <div className="ml-6 mt-[32px] flex flex-col gap-[16px] font-body-b1">
           {categories.map((category) => (
             <NavLink
-              to={`categories/${category.name}`}
+              to={`/categories/${category.name}`}
               className="z-40 my-2 text-base font-medium tracking-[0.05em] text-[inherit] [text-decoration:none]"
             >
               {category.name}
@@ -481,7 +480,7 @@ function Navbar(): JSX.Element {
             </NavLink>
             {categories.map((category) => (
               <NavLink
-                to={`categories/${category.name}`}
+                to={`/categories/${category.name}`}
                 className="z-40 font-medium tracking-[0.25em] text-[inherit] [text-decoration:none]"
               >
                 {category.name}

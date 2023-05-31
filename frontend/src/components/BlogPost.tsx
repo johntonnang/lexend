@@ -14,7 +14,7 @@ const BlogPost: FunctionComponent<BlogPostType> = ({
   onThe15thOfJuneWeAreProud,
 }) => {
   return (
-    <div className="mx-6 flex w-[302px] flex-col items-center justify-center gap-[26px] text-left font-body-b1 text-base text-black-200 lg:m-0 lg:w-full lg:flex-row lg:items-end lg:justify-start lg:gap-[18px] lg:text-5xl">
+    <div className="mx-6 flex w-[302px] flex-col items-center justify-center gap-[26px] text-left font-body-b1 text-base text-black-200 lg:m-0 lg:w-full lg:flex-row lg:items-end lg:justify-start  lg:text-5xl">
       <div className="flex w-full items-start justify-start text-left lg:hidden">
         <div className="relative font-light leading-[120%] lg:hidden">
           {sTORES}
@@ -25,7 +25,7 @@ const BlogPost: FunctionComponent<BlogPostType> = ({
         alt=""
         src={rectangle72}
       />
-      <div className="flex flex-col items-center justify-between gap-[26px] pb-[88px] lg:h-[308px] lg:items-start lg:gap-0">
+      <div className="flex flex-col items-center justify-between gap-[26px] pb-[88px] lg:h-[308px] lg:items-start lg:gap-0 lg:pb-0">
         <div className="hidden font-light leading-[120%] lg:relative lg:inline-block">
           {sTORES}
         </div>
