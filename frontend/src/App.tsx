@@ -3,7 +3,7 @@ import HomeView from "./routes/HomeView"
 import CategoriesView from "./routes/CategoriesView"
 import DetailPage from "./routes/DetailPage"
 import { useEffect, useState } from "react"
-// import { ShoppingCartProvider } from "./context/ShoppingCartContext"
+import { ShoppingCartProvider } from "./context/ShoppingCartContext"
 
 interface Category {
   category_id: number
@@ -51,19 +51,19 @@ function App() {
   }
 
   return (
-    // <ShoppingCartProvider>
-    <Routes>
-      <Route path="/" element={<HomeView />} />
-      {categories.map((category) => (
-        <Route
-          key={category.category_id}
-          path="/categories/:category"
-          element={<CategoriesView />}
-        />
-      ))}
-      <Route path="/product/:product" element={<DetailPage />} />
-    </Routes>
-    // </ShoppingCartProvider>
+    <ShoppingCartProvider>
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        {categories.map((category) => (
+          <Route
+            key={category.category_id}
+            path="/categories/:category"
+            element={<CategoriesView />}
+          />
+        ))}
+        <Route path="/product/:product" element={<DetailPage />} />
+      </Routes>
+    </ShoppingCartProvider>
   )
 }
 

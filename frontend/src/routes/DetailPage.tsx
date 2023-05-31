@@ -375,7 +375,7 @@ const DetailPage: FunctionComponent = () => {
 
 
         <img
-          className="absolute left-[24px] top-[150px] z-[1] mx-[!important] my-0 h-[27px] w-[27px] shrink-0 overflow-hidden lg:hidden"
+          className="absolute left-[24px] top-[190px] z-[1] mx-[!important] my-0 h-[27px] w-[27px] shrink-0 overflow-hidden lg:hidden"
           alt=""
           src="/chevron-left1.svg"
         />
