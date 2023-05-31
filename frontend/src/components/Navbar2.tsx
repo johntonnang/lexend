@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { useState, useEffect } from "react"
 import FrameComponent from "./FrameComponent"
-
 interface Category {
   category_id: number
   name: string
@@ -13,7 +12,6 @@ function Navbar2(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { openCart, cartQuantity } = useShoppingCart()
   const [categories, setCategories] = useState<Category[]>([])
-  // const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     fetchCategories()

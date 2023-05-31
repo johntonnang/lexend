@@ -21,24 +21,27 @@ interface Product {
 const CategoriesView: FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false)
   const [products, setProducts] = useState<Product[]>([])
+  const { category } = useParams<{ category: string }>()
 
   const handleClick = () => {
     setIsExpanded(!isExpanded)
   }
 
   useEffect(() => {
-    fetchCategories()
-  }, [])
-
-  const fetchCategories = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/products")
-      const data = await response.json()
-      setProducts(data)
-    } catch (error) {
-      console.error("Error fetching categories:", error)
+    const fetchProductsByCategory = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/products/${category}`
+        )
+        const data = await response.json()
+        setProducts(data)
+      } catch (error) {
+        console.error("Error fetching products:", error)
+      }
     }
-  }
+
+    fetchProductsByCategory()
+  }, [category])
 
   const expandedText = `
 Our collection of seating options is designed to elevate both
@@ -54,7 +57,7 @@ companion for your luxurious lifestyle.
   const collapsedText = `${expandedText.substring(0, 266)}`
 
   return (
-    <div>
+    <>
       <Navbar2 />
       <div className="relative h-[110px] bg-beige"></div>
       <div className="text-black relative flex w-screen flex-col items-center justify-start overflow-hidden bg-beige text-left font-body-b1 text-[96px]">
@@ -62,8 +65,9 @@ companion for your luxurious lifestyle.
           <div className="flex flex-col justify-start">
             <div className="relative box-border flex h-[158px] w-[100%] flex-col  items-center justify-end overflow-hidden bg-[url(/public/frame-87@3x.png)] bg-cover bg-[top] bg-no-repeat px-0 py-[32px] min-[500px]:h-[250px] md:h-[400px] lg:h-[722px] lg:py-[64px]"></div>
             <div className="relative left-[16px] mx-[!important]  my-0 pt-[32px] text-[48px] tracking-[-0.05em] lg:left-[69.5px] lg:pt-[176px] lg:text-[96px]">
-              Chairs
+              {category}
             </div>
+            <GobackButton />
             <div className="text-black h-[169px] w-[100%] text-5xl lg:flex lg:flex-row lg:items-start lg:justify-between">
               <div className="relative h-[255px]  pl-[16px] pr-[16px] lg:pl-[69px]">
                 <div
@@ -150,9 +154,8 @@ companion for your luxurious lifestyle.
           <NewsletterForm />
           <Footer />
         </div>
-        <Navbar2 />
       </div>
-    </div>
+    </>
   )
 }
 
