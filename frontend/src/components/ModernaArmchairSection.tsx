@@ -28,7 +28,7 @@ const ModernaArmchairSection: FunctionComponent<FurnitureSectionType> = ({
   const quantity = id !== undefined ? getItemQuantity(parseInt(id, 10)) : 0
 
   return (
-    <div className="z-[1] flex lg:h-[1147px] h-[964.46px] w-full flex-row items-start justify-center gap-[101px] bg-beige  lg:pt-[390px] pt-[50px] text-left font-body-b1 text-5xl text-black-200">
+    <div className="z-[1] flex h-[964.46px] w-full flex-row items-start justify-center gap-[101px] bg-beige pt-[50px]  text-left font-body-b1 text-5xl text-black-200 lg:h-[1147px] lg:pt-[390px]">
       <div className="z-[0] flex flex-col items-center justify-start lg:w-[1638px] lg:flex-row lg:gap-[40px]">
         <div className="flex flex-col items-center justify-start gap-[20px]">
           <img
@@ -115,18 +115,66 @@ const ModernaArmchairSection: FunctionComponent<FurnitureSectionType> = ({
                 />
               </div>
             </div>
-            <div className="relative inline-block hidden w-[736px] text-13xl font-light leading-[120%] lg:inline-block ">
-              12 000 SEK
+            <div className="relative hidden w-[736px] text-13xl font-light leading-[120%] lg:inline-block ">
+              {furniturePrice}
             </div>
           </div>
-          <button className="box-border flex h-[72px] w-[330px] cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-brown bg-brown px-28 py-4 lg:w-[480px] ">
-            <div
-              className="text-[16px]tracking-[0.15em] relative
-            text-left font-medium  text-beige lg:text-5xl"
+          {quantity === 0 ? (
+            <button
+              className="box-border flex h-[72px] w-[330px] cursor-pointer flex-row items-center justify-center rounded-31xl border-[4px] border-solid border-brown bg-brown py-4 lg:w-[480px] lg:px-28"
+              onClick={() => {
+                if (increaseCartQuantity != null) {
+                  increaseCartQuantity(parseInt(id, 10))
+                }
+              }}
             >
-              Add to cart
+              <div
+                className="text-[16px]tracking-[0.15em] relative
+            text-left font-medium  text-beige lg:text-5xl"
+              >
+                Add to cart
+              </div>
+            </button>
+          ) : (
+            <div className="mb-2 flex items-center justify-between">
+              <div className="text-black flex items-center rounded-none  bg-white px-2 py-2">
+                <Button
+                  className="text-black border-0 bg-transparent"
+                  size="sm"
+                  onClick={() => {
+                    if (decreaseCartQuantity != null) {
+                      decreaseCartQuantity(parseInt(id, 10))
+                    }
+                  }}
+                >
+                  -
+                </Button>
+                <span className="mx-2">{quantity}</span>
+                <Button
+                  className="text-black border-0 bg-transparent"
+                  size="sm"
+                  onClick={() => {
+                    if (increaseCartQuantity != null) {
+                      increaseCartQuantity(parseInt(id, 10))
+                    }
+                  }}
+                >
+                  +
+                </Button>
+              </div>
+              <Button
+                className="text-decoration-underline rounded-0 border-0 bg-transparent px-4 py-2 font-bold text-white"
+                size="sm"
+                onClick={() => {
+                  if (removeFromCart != null) {
+                    removeFromCart(parseInt(id, 10))
+                  }
+                }}
+              >
+                Remove
+              </Button>
             </div>
-          </button>
+          )}
           <div className="flex h-[28px] w-[258px] flex-row items-center justify-between text-base lg:h-[22px] lg:w-[736px]">
             <div className="flex flex-row items-center justify-start gap-[10.89px] lg:gap-[24px]">
               <img
