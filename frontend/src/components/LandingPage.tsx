@@ -43,7 +43,7 @@ const LandingPage: FunctionComponent = () => {
             />
             <div className="mx-6 mt-6 flex flex-col items-start justify-center gap-[32px] md:gap-[68px] lg:absolute lg:left-[108px] lg:top-[300.66px] lg:-m-0">
               <div className="relative w-[300px] md:w-[400px] lg:h-[265px] lg:w-[844px]">
-                <div className="relative left-0 inline-block leading-[100%] tracking-[-0.05em] sm:top-72 md:top-72 lg:absolute lg:top-0">
+                <div className="relative left-0 inline-block leading-[100%] tracking-[-0.05em] lg:absolute lg:top-0">
                   Furniture that lasts forever
                 </div>
                 <div className="relative left-0 mt-4 inline-block text-4xl font-light leading-[120%] md:text-17xl lg:absolute lg:top-[112px] lg:m-0 lg:h-[166px] lg:w-[872px]">
