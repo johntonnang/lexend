@@ -102,6 +102,7 @@ app.get("/product/:product", (request, response) => __awaiter(void 0, void 0, vo
         response.status(500).json({ error: "Unable to retrieve products" });
     }
 }));
+app.use(express_1.default.static(path_1.default.join(__dirname, "public")));
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");
 });
