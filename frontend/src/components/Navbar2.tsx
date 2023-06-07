@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { useState, useEffect } from "react"
-import FrameComponent from "./FrameComponent"
+
 interface Category {
   category_id: number
   name: string

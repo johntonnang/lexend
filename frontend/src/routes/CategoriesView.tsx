@@ -7,7 +7,6 @@ import Footer from "../components/Footer"
 import Navbar2 from "../components/Navbar2"
 import { NavLink, useParams } from "react-router-dom"
 import GobackButton from "../components/GobackButton"
-import { useMediaQuery } from "react-responsive"
 
 interface Product {
   product_id: number

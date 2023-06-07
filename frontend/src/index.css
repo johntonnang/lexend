@@ -5,17 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-:root {
-  --white: #fff;
-  --brown-bs: #614e42;
-  --black-100: #28221e;
-  --black-200: #000;
-  --beige: #f2ebe3;
-  --grey: #DBDBDB;
-}
-
-
 body {
   @apply leading-[normal] m-0;
 }
