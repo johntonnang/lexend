@@ -19,7 +19,7 @@ function Navbar2(): JSX.Element {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch("http://localhost:3000/categories")
+      const response = await fetch("/categories")
       const data = await response.json()
       setCategories(data)
     } catch (error) {

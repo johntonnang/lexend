@@ -30,7 +30,7 @@ export function CartItem({ id, quantity }: CartItemProps): JSX.Element {
   useEffect(() => {
     const fetchItem = async (): Promise<void> => {
       try {
-        const response = await fetch("http://localhost:3000/product")
+        const response = await fetch("/product")
         const data = await response.json()
         const product = data.find((p: Product) => p.id === id)
         setItem(product)

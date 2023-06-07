@@ -31,7 +31,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps): JSX.Element {
   useEffect(() => {
     const fetchProductItems = async (): Promise<void> => {
       try {
-        const response = await fetch("http://localhost:3000/product/")
+        const response = await fetch("/product/")
         const data = await response.json()
         setProductItems(data)
       } catch (error) {

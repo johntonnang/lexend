@@ -29,9 +29,7 @@ const CategoriesView: FunctionComponent = () => {
   useEffect(() => {
     const fetchProductsByCategory = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:3000/products/${category}`
-        )
+        const response = await fetch(`products/${category}`)
         const data = await response.json()
         setProducts(data)
       } catch (error) {

@@ -25,7 +25,7 @@ const DetailPage: FunctionComponent = () => {
   useEffect(() => {
     const fetchProductsByProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/product/${product}`)
+        const response = await fetch(`/product/${product}`)
         const data = await response.json()
         console.log(response)
         setProducts(data)

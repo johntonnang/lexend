@@ -32,7 +32,7 @@ function App() {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch("http://localhost:3000/categories")
+      const response = await fetch("/categories")
       const data = await response.json()
       setCategories(data)
     } catch (error) {
@@ -42,7 +42,7 @@ function App() {
 
   const fetchProduct = async () => {
     try {
-      const response = await fetch("http://localhost:3000/product/")
+      const response = await fetch("/product/")
       const data = await response.json()
       setProduct(data)
     } catch (error) {
