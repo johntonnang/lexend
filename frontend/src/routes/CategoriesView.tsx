@@ -16,8 +16,10 @@ interface Product {
   image: string
   extra_image_url: string
   price: number
+  bg_category: string
 }
 interface Category {
+  category_id: number
   name: string
   bg_image: string
   design_img: string
@@ -34,17 +36,13 @@ const CategoriesView: FunctionComponent = () => {
   const handleClick = () => {
     setIsExpanded(!isExpanded)
   }
-  const [categoryImage, setCategoryImage] = useState<string | null>(null)
-  const [designImg, setDesignImg] = useState<string | null>(null)
-  const [bottomImg, setBottomImg] = useState<string | null>(null)
-  const [bottomHeading, setBottomHeading] = useState<string | null>(null)
-  const [bottomText, setBottomText] = useState<string | null>(null)
+
   const [categories, setCategories] = useState<Category[]>([])
 
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(`/products/${category}`)
+        const response = await fetch(`/categories/${category}`)
         const data = await response.json()
         setCategories(data)
       } catch (error) {
@@ -55,20 +53,9 @@ const CategoriesView: FunctionComponent = () => {
   }, [category])
 
   useEffect(() => {
-    const currentCategory = categories.find((cat) => cat.name === category)
-    if (currentCategory) {
-      setCategoryImage(currentCategory.bg_image)
-      setDesignImg(currentCategory.design_img)
-      setBottomImg(currentCategory.bottom_img)
-      setBottomHeading(currentCategory.bottom_heading)
-      setBottomText(currentCategory.bottom_text)
-    }
-  }, [category, categories])
-
-  useEffect(() => {
     const fetchProductsByCategory = async () => {
       try {
-        const response = await fetch(`/products/${category}`)
+        const response = await fetch(`products/${category}`)
         const data = await response.json()
         setProducts(data)
       } catch (error) {
@@ -95,6 +82,8 @@ companion for your luxurious lifestyle.
   const collapsedText = `${expandedText.substring(0, 179)}`
   const collapsedTextMobile = `${expandedText.substring(0, 105)}`
 
+  const selectedCategory = categories.find((cat) => cat.name === category)
+
   return (
     <>
       <Navbar2 />
@@ -103,11 +92,12 @@ companion for your luxurious lifestyle.
         <div className="z-[0] flex w-[100%] flex-col items-center justify-start gap-[32px]">
           <div className="flex flex-col justify-start">
             <div
+              key={selectedCategory?.category_id}
               className="relative box-border flex h-[158px] w-[100%] flex-col  items-center justify-end overflow-hidden bg-cover bg-[top] bg-no-repeat px-0 py-[32px] min-[500px]:h-[250px] md:h-[400px] lg:h-[722px] lg:py-[64px]"
-              style={{ backgroundImage: `url(/public/${categoryImage})` }}
-            >
-              <GobackButton />
-            </div>
+              style={{ backgroundImage: `url(/${selectedCategory?.bg_image})` }}
+            ></div>
+
+            <GobackButton />
             <div className="relative left-[16px] mx-[!important]  my-0 pt-[32px] text-[48px] tracking-[-0.05em] lg:left-[69.5px] lg:pt-[176px] lg:text-[96px]">
               {category}
             </div>
@@ -163,11 +153,11 @@ companion for your luxurious lifestyle.
           </div>
         </div>
 
-        <LexendContainer designImg={`/${designImg}`} />
+        <LexendContainer designImg={`/${selectedCategory?.design_img}`} />
         <ChairContainer
-          bottomImg={`/${bottomImg}`}
-          bottomHeading={bottomHeading}
-          bottomText={bottomText}
+          bottomImg={`/${selectedCategory?.bottom_img}`}
+          bottomHeading={selectedCategory?.bottom_heading}
+          bottomText={selectedCategory?.bottom_text}
         />
         <div className="z-[3] flex flex-col items-start justify-start">
           <NewsletterForm />

@@ -1,23 +1,26 @@
 import { FunctionComponent } from "react"
 
-
 interface ChairContainerProps {
-  bottomImg: string;
-  bottomHeading: string | null;
-  bottomText: string | null;
+  bottomImg: string
+  bottomHeading: string | undefined
+  bottomText: string | undefined
 }
 
-const ChairContainer: FunctionComponent<ChairContainerProps> = ({ bottomImg, bottomHeading, bottomText }) => {
+const ChairContainer: FunctionComponent<ChairContainerProps> = ({
+  bottomImg,
+  bottomHeading,
+  bottomText,
+}) => {
   return (
     <div>
       <div className="mb-[64px] flex w-fit flex-col-reverse items-center px-[15px] lg:mb-[176px] lg:w-auto lg:flex-row lg:bg-white lg:px-0">
         <div className="text-black flex  flex-col justify-center px-[12px] lg:pl-[130px]">
           <div className="flex flex-col items-start justify-start ">
             <div className="relative inline-block pt-[16px] text-[24px] font-light leading-[120%] tracking-[-0.07em] lg:text-[48px] lg:font-normal ">
-            {bottomHeading}
+              {bottomHeading}
             </div>
             <p className="relative inline-block text-[16px] font-light leading-[120%] lg:pr-[90px] lg:text-[24px]">
-            {bottomText}
+              {bottomText}
             </p>
           </div>
           <div className="flex items-center justify-center pt-[16px] lg:justify-start">

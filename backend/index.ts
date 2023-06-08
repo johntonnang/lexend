@@ -50,6 +50,34 @@ app.get("/categories", async (request, response) => {
   }
 })
 
+app.get("/categories/:category", async (request, response) => {
+  try {
+    const result = await client.query(`SELECT * FROM categories;`)
+    const categories = result.rows
+
+    const categoriesWithImages = []
+
+    for (const category of categories) {
+      if (!category.image) {
+        const extraImagePath = path.join(
+          __dirname,
+          `../frontend/public/${category.bg_image}`
+        )
+        const extraImageBuffer = fs.readFileSync(extraImagePath)
+        const extraBase64Image = extraImageBuffer.toString("base64")
+        category.image = `${extraBase64Image}`
+      }
+
+      categoriesWithImages.push(category)
+    }
+
+    response.json(categoriesWithImages)
+  } catch (error) {
+    console.error("Error retrieving categories:", error)
+    response.status(500).json({ error: "Unable to retrieve categories" })
+  }
+})
+
 app.get("/products/:category", async (request, response) => {
   const category = request.params.category
   console.log(request.params.category)
