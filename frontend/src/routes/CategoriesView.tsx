@@ -7,6 +7,8 @@ import Footer from "../components/Footer"
 import Navbar2 from "../components/Navbar2"
 import { NavLink, useParams } from "react-router-dom"
 import GobackButton from "../components/GobackButton"
+import { useMediaQuery } from 'react-responsive';
+
 
 interface Product {
   product_id: number
@@ -15,6 +17,14 @@ interface Product {
   image: string
   extra_image_url: string
   price: number
+}
+interface Category {
+  name: string
+  bg_image: string
+  design_img: string;
+  bottom_img: string;
+  bottom_heading: string;
+  bottom_text: string;
 }
 
 const CategoriesView: FunctionComponent = () => {
@@ -25,17 +35,51 @@ const CategoriesView: FunctionComponent = () => {
   const handleClick = () => {
     setIsExpanded(!isExpanded)
   }
+  const [categoryImage, setCategoryImage] = useState<string | null>(null);
+  const [designImg, setDesignImg] = useState<string | null>(null);
+  const [bottomImg, setBottomImg] = useState<string | null>(null);
+  const [bottomHeading, setBottomHeading] = useState<string | null>(null);
+  const [bottomText, setBottomText] = useState<string | null>(null);
+  const [categories, setCategories] = useState<Category[]>([])
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(`/products/${category}`)
+        const data = await response.json()
+        setCategories(data)
+      } catch (error) {
+        console.error("Error fetching categories:", error)
+      }
+    }
+    fetchCategories()
+  }, [category])
+
+  useEffect(() => {
+    const currentCategory = categories.find(cat => cat.name === category);
+    if (currentCategory) {
+        setCategoryImage(currentCategory.bg_image);
+        setDesignImg(currentCategory.design_img);
+        setBottomImg(currentCategory.bottom_img);
+        setBottomHeading(currentCategory.bottom_heading);
+        setBottomText(currentCategory.bottom_text);
+
+    }
+  }, [category, categories]);
 
   useEffect(() => {
     const fetchProductsByCategory = async () => {
       try {
-        const response = await fetch(`/products/${category}`)
+        const response = await fetch(`http://localhost:3000/products/${category}`)
         const data = await response.json()
         setProducts(data)
       } catch (error) {
         console.error("Error fetching products:", error)
       }
+
     }
+
+
 
     fetchProductsByCategory()
   }, [category])
@@ -51,24 +95,28 @@ our exclusive chair collection and discover the perfect seating
 companion for your luxurious lifestyle.
 `
 
-  const collapsedText = `${expandedText.substring(0, 266)}`
+const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 1224 });
+
+  const collapsedText = `${expandedText.substring(0, 179)}`
+  const collapsedTextMobile = `${expandedText.substring(0, 105)}`
 
   return (
     <>
       <Navbar2 />
       <div className="relative h-[110px] bg-beige"></div>
       <div className="text-black relative flex w-screen flex-col items-center justify-start overflow-hidden bg-beige text-left font-body-b1 text-[96px]">
-        <div className="z-[0] flex w-[100%] flex-col items-center justify-start gap-[176px]">
+        <div className="z-[0] flex w-[100%] flex-col items-center justify-start gap-[32px]">
           <div className="flex flex-col justify-start">
-            <div className="relative box-border flex h-[158px] w-[100%] flex-col  items-center justify-end overflow-hidden bg-[url(/public/frame-87@3x.png)] bg-cover bg-[top] bg-no-repeat px-0 py-[32px] min-[500px]:h-[250px] md:h-[400px] lg:h-[722px] lg:py-[64px]"></div>
+            <div className="relative box-border flex h-[158px] w-[100%] flex-col  items-center justify-end overflow-hidden bg-cover bg-[top] bg-no-repeat px-0 py-[32px] min-[500px]:h-[250px] md:h-[400px] lg:h-[722px] lg:py-[64px]" style={{ backgroundImage: `url(/public/${categoryImage})` }}>
+            <GobackButton />
+            </div>
             <div className="relative left-[16px] mx-[!important]  my-0 pt-[32px] text-[48px] tracking-[-0.05em] lg:left-[69.5px] lg:pt-[176px] lg:text-[96px]">
               {category}
             </div>
-            <GobackButton />
-            <div className="text-black h-[169px] w-[100%] text-5xl lg:flex lg:flex-row lg:items-start lg:justify-between">
-              <div className="relative h-[255px]  pl-[16px] pr-[16px] lg:pl-[69px]">
+            <div className="text-black w-[100%] text-5xl lg:flex">
+            <div className={`relative pl-[16px] pr-[16px] lg:pl-[69px] ${isExpanded ? "h-[350px]" : "h-[160px]"}`}>
                 <div
-                  className="inline-block w-[100%] pt-[24px] text-[16px] font-light lg:w-[60%] lg:pt-[32px] lg:text-[24px]"
+                  className="inline-block w-[100%] pt-[24px] text-[16px] font-light lg:w-[70%] lg:pt-[32px] lg:text-[24px]"
                   style={{
                     background: !isExpanded
                       ? "linear-gradient(180deg, rgba(255,255,255,0), #f2ebe3), #28221e"
@@ -77,12 +125,12 @@ companion for your luxurious lifestyle.
                     WebkitTextFillColor: !isExpanded ? "transparent" : "",
                   }}
                 >
-                  {isExpanded ? expandedText : collapsedText}
+                   {isExpanded ? expandedText : isDesktopOrLaptop ? collapsedText : collapsedTextMobile}
                 </div>
                 <div
                   className="relative left-[41.77%] cursor-pointer text-[14px] font-semibold leading-[120%]  underline lg:text-[18px]"
                   onClick={handleClick}
-                >
+                  >
                   {isExpanded ? "Read less" : "...Read more"}
                 </div>
               </div>
@@ -101,57 +149,22 @@ companion for your luxurious lifestyle.
                 <FurnitureSection
                   furnitureImage={`data:image/png;base64,${product.image}`}
                   furnitureName={product.name}
-                  furnitureDimensions={product.extra_image_url}
+                  furnitureDimensions={`/${product.extra_image_url}`}
                   furniturePrice={product.price}
                 />
               </NavLink>
             ))}
-            {/* <FurnitureSection
-              furnitureImage="/rectangle-37@2x.png"
-              furnitureName="Flowing lounge chair"
-              furnitureDimensions="/colors01.svg"
-              furniturePrice="15 000 SEK"
-            /> */}
-            {/* <FurnitureSection
-              furnitureImage="/rectangle-371@2x.png"
-              furnitureName="Moderna armchair"
-              furnitureDimensions="/colors11.svg"
-              furniturePrice="12 000 SEK"
-            />
-            <FurnitureSection
-              furnitureImage="/rectangle-372@2x.png"
-              furnitureName="Regal armchair "
-              furnitureDimensions="/colors21.svg"
-              furniturePrice="15 000 SEK"
-            />
-            <FurnitureSection
-              furnitureImage="/rectangle-373@2x.png"
-              furnitureName="Wooden dining chair "
-              furnitureDimensions="/colors31.svg"
-              furniturePrice="3 000 SEK"
-            />
-            <FurnitureSection
-              furnitureImage="/rectangle-374@2x.png"
-              furnitureName="Leather armchair"
-              furnitureDimensions="/colors41.svg"
-              furniturePrice="20 000 SEK"
-            />
-            <FurnitureSection
-              furnitureImage="/rectangle-375@2x.png"
-              furnitureName="Mahogany stool"
-              furnitureDimensions="/colors51.svg"
-              furniturePrice="2 000 SEK"
-            /> */}
           </div>
         </div>
 
-        <LexendContainer />
-        <ChairContainer />
+        <LexendContainer designImg={`/${designImg}`} />
+        <ChairContainer bottomImg={`/${bottomImg}`} bottomHeading={bottomHeading} bottomText={bottomText} />
         <div className="z-[3] flex flex-col items-start justify-start">
           <NewsletterForm />
           <Footer />
         </div>
-      </div>
+        </div>
+
     </>
   )
 }
