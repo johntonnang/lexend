@@ -1,6 +1,10 @@
 import { FunctionComponent } from "react";
 
-const LexendContainer: FunctionComponent = () => {
+interface LexendContainerProps {
+  designImg: string;
+}
+
+const LexendContainer: FunctionComponent<LexendContainerProps> = ({ designImg }) => {
   return (
     <div>
 
@@ -9,7 +13,7 @@ const LexendContainer: FunctionComponent = () => {
         <img
           className="relative lg:w-3/5 w-full  object-cover "
           alt=""
-          src="/rectangle-115@2x.png"
+          src={designImg}
         />
         <div
           className="flex flex-col justify-center text-black "

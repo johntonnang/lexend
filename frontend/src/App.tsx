@@ -4,6 +4,7 @@ import CategoriesView from "./routes/CategoriesView"
 import DetailPage from "./routes/DetailPage"
 import { useEffect, useState } from "react"
 import { ShoppingCartProvider } from "./context/ShoppingCartContext"
+import ScrollToTop from "./components/ScrollToTop"
 
 interface Category {
   category_id: number
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <ShoppingCartProvider>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomeView />} />
         {categories.map((category) => (

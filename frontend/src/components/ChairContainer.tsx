@@ -1,17 +1,23 @@
 import { FunctionComponent } from "react"
 
-const ChairContainer: FunctionComponent = () => {
+
+interface ChairContainerProps {
+  bottomImg: string;
+  bottomHeading: string | null;
+  bottomText: string | null;
+}
+
+const ChairContainer: FunctionComponent<ChairContainerProps> = ({ bottomImg, bottomHeading, bottomText }) => {
   return (
     <div>
       <div className="mb-[64px] flex w-fit flex-col-reverse items-center px-[15px] lg:mb-[176px] lg:w-auto lg:flex-row lg:bg-white lg:px-0">
         <div className="text-black flex  flex-col justify-center px-[12px] lg:pl-[130px]">
           <div className="flex flex-col items-start justify-start ">
             <div className="relative inline-block pt-[16px] text-[24px] font-light leading-[120%] tracking-[-0.07em] lg:text-[48px] lg:font-normal ">
-              The significance of choosing the right chair
+            {bottomHeading}
             </div>
             <p className="relative inline-block text-[16px] font-light leading-[120%] lg:pr-[90px] lg:text-[24px]">
-              Chat or schedule a personal meeting with one of our experts on
-              interior design to perfect your style.
+            {bottomText}
             </p>
           </div>
           <div className="flex items-center justify-center pt-[16px] lg:justify-start">
@@ -23,7 +29,7 @@ const ChairContainer: FunctionComponent = () => {
         <img
           className="relative w-full object-cover  lg:w-3/5 "
           alt=""
-          src="/rectangle-116@2x.png"
+          src={bottomImg}
         />
       </div>
     </div>
