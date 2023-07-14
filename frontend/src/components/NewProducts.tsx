@@ -35,7 +35,7 @@ const NewProducts: FunctionComponent = () => {
           <ProductPreview
             productId="/rectangle-373@2x.png"
             productName="Wooden dining chair"
-            productColor="/colors.svg"
+            productColor="/colors-4-chairs.svg"
             productPrice={3000}
           />
         </div>
